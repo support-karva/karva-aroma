@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="pot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2C266"/><stop offset="1" stop-color="#B8601F"/></linearGradient>
+    <linearGradient id="wisp" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F1E6D2" stop-opacity=".95"/><stop offset="1" stop-color="#F1E6D2" stop-opacity=".25"/></linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#050403"/>
+  <path d="M30 33c-5-4-1-8 2-11s4-7 0-11" fill="none" stroke="url(#wisp)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M38 31c-3-3 0-5 2-7s2-5-1-7" fill="none" stroke="url(#wisp)" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+  <path d="M13 38h38c0 9-7.5 16-19 16S13 47 13 38z" fill="url(#pot)"/>
+  <rect x="10" y="35" width="44" height="4.5" rx="2.25" fill="#E8B04B"/>
+</svg>

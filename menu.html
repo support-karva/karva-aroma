@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script src="karva-motion-shim.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Karva · The Masala Dabba</title>
+<meta name="description" content="The Karva menu as a masala dabba: chaat, soups, appetizers, kebabs, curries, South Indian, biryani, breads and desserts, with a Thai kitchen beside it.">
+<meta name="theme-color" content="#050403">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<script>
+/* Motion state before first paint: follow the OS unless the visitor chose. */
+(function (d) {
+  d.classList.add('js');
+  var o = null; try { o = localStorage.getItem('karva-motion'); } catch (e) {}
+  var r = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var on = o === 'on' || (o !== 'off' && !r);
+  d.setAttribute('data-motion', on ? 'on' : 'off');
+  if (on && window.WebGLRenderingContext && !/[?&]fx=off/.test(location.search)) d.classList.add('fx-pending');
+})(document.documentElement);
+</script>
+<link rel="stylesheet" href="css/aroma.css">
+<script type="module" src="js/dabba.js"></script>
+</head>
+<body data-atmos="dabba">
+<div class="haze" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" data-nav>
+  <div class="nav__in">
+    <a class="brand" href="index.html" aria-label="Karva, home">Karva</a>
+    <nav class="nav__links" aria-label="Pages"><a href="index.html">Aroma</a><span class="sep" aria-hidden="true">·</span><a href="menu.html" aria-current="page">Dabba</a><span class="sep" aria-hidden="true">·</span><a href="chaat.html">Chaat</a><span class="sep" aria-hidden="true">·</span><a href="table.html">Table</a></nav>
+    <div class="nav__acts">
+      <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>11–2 · 5–11</span></p>
+      <button class="motion" type="button" data-motion-toggle hidden aria-pressed="false"><span class="motion__track" aria-hidden="true"></span><span class="ml">Motion</span> <b data-motion-state>On</b></button>
+      <a class="btn btn--gold btn--sm" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve</a>
+      <details class="mnav">
+        <summary aria-label="Open pages menu"><span class="mnav__ic" aria-hidden="true"></span>Pages</summary>
+        <div class="mnav__sheet">
+          <nav aria-label="Pages"><a class="big" href="index.html"><small>01</small>Aroma</a><a class="big" href="menu.html" aria-current="page"><small>02</small>Dabba</a><a class="big" href="chaat.html"><small>03</small>Chaat</a><a class="big" href="table.html"><small>04</small>Table</a></nav>
+          <div class="mnav__foot">
+            <a class="btn btn--gold" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve</a>
+            <a class="btn btn--line" href="tel:+12146180078">Call (214) 618-0078</a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+  <header class="phead phead--tight" data-zone="0.5">
+    <span class="kicker">The menu</span>
+    <h1>The Masala <em>Dabba.</em></h1>
+    <p>Every Indian home keeps one tin of spices. Ours holds the menu. Lift a katori.</p>
+  </header>
+  <div class="dabba-wrap">
+    <div class="tins" role="tablist" aria-label="Menu chapters">
+      <div class="tin" role="presentation">
+        <div class="tin__list" role="presentation">
+          <button class="katori" type="button" role="tab" id="t-chaat" aria-controls="p-chaat" aria-selected="false" data-slug="chaat" data-rgb="0.9,0.24,0.12" style="--x:50%;--y:50%;--k:28%"><span class="katori__bowl" aria-hidden="true"></span><span class="katori__spice sp-chilli" aria-hidden="true"></span><span class="katori__label">Chaat</span></button>
+          <button class="katori" type="button" role="tab" id="t-soups" aria-controls="p-soups" aria-selected="false" data-slug="soups" data-rgb="0.78,0.78,0.45" style="--x:50.00%;--y:17.00%"><span class="katori__bowl" aria-hidden="true"></span><span class="katori__spice sp-fennel" aria-hidden="true"></span><span class="katori__label">Soups</span></button>
+          <button class="katori" type="button" role="tab" id="t-appetizers" aria-controls="p-appetizers" aria-selected="false" data-slug="appetizers" data-rgb="0.62,0.44,0.24" style="--x:73.33%;--y:26.67%"><span class="katori__bowl" aria-hidden="true"></span><span class="katori__spice sp-mustard" aria-hidden="true"></span><span class="katori__label">Appetizers</span></button>
+          <button class="katori" type="button" role="tab" id="t-kebabs" aria-controls="p-kebabs" aria-selected="false" data-slug="kebabs" data-rgb="0.78,0.5,0.28" style="--x:83.00%;--y:50.00%"><span class="katori__bowl" aria-hidden="true"></span><span class="katori__spice sp-garam" aria-hidden="true"></span><span class="katori__label">Kebabs</span></button>
+          <button class="katori" type="button" role="tab" id="t-curries" aria-controls="p-curries" aria-selected="false" data-slug="curries" data-rgb="0.96,0.68,0.1" style="--x:73.33%;--y:73.33%"><span class="katori__bowl" aria-hidden="true"></span><span class="katori__spice sp-turmeric" aria-hidden="true"></span><span class="katori__label">Curries</span></button>
+          <button class="katori" type="button" role="tab" id="t-south-indian" aria-controls="p-south-indian" aria-selected="false" data-slug="south-indian" data-rgb="0.86,0.72,0.48" style="--x:50.00%;--y:83.00%"><span class="katori__bowl" aria-hidden="true"></span><span class="katori__spice sp-coriander" aria-hidden="true"></span><span class="katori__label">South Indian</span></button>
+          <button class="katori" type="button" role="tab" id="t-biryani" aria-controls="p-biryani" aria-selected="false" data-slug="biryani" data-rgb="0.96,0.42,0.12" style="--x:26.67%;--y:73.33%"><span class="katori__bowl" aria-hidden="true"></span><span class="katori__spice sp-saffron" aria-hidden="true"></span><span class="katori__label">Biryani</span></button>
+          <button class="katori" type="button" role="tab" id="t-breads" aria-controls="p-breads" aria-selected="false" data-slug="breads" data-rgb="0.78,0.56,0.32" style="--x:17.00%;--y:50.00%"><span class="katori__bowl" aria-hidden="true"></span><span class="katori__spice sp-cumin" aria-hidden="true"></span><span class="katori__label">Breads</span></button>
+          <button class="katori" type="button" role="tab" id="t-desserts" aria-controls="p-desserts" aria-selected="false" data-slug="desserts" data-rgb="0.66,0.76,0.48" style="--x:26.67%;--y:26.67%"><span class="katori__bowl" aria-hidden="true"></span><span class="katori__spice sp-cardamom" aria-hidden="true"></span><span class="katori__label">Desserts</span></button>
+        </div>
+        <span class="lid" aria-hidden="true"></span>
+      </div>
+      <button class="thai-tab" type="button" role="tab" id="t-thai" aria-controls="p-thai" aria-selected="false" data-slug="thai" data-rgb="0.92,0.88,0.7">
+        <span class="tin tin--thai" aria-hidden="true"><span class="tin__list">
+          <span class="katori" style="--x:31%;--y:50%"><span class="katori__bowl"></span><span class="katori__spice sp-coconut"></span></span>
+          <span class="katori" style="--x:69%;--y:50%"><span class="katori__bowl"></span><span class="katori__spice sp-soy"></span></span>
+        </span></span>
+        <span class="thai-tab__label">Thai kitchen</span>
+      </button>
+      <p class="tins__note">Spice can be adjusted. Tell your server about allergies.</p>
+    </div>
+    <div class="chapters" data-zone="0.55">
+
+    <section class="chap" role="tabpanel" id="p-chaat" aria-labelledby="t-chaat" tabindex="0">
+      <p class="chap__spice"><span class="sw" style="--c:#B3311F" aria-hidden="true"></span>Kashmiri chilli</p>
+      <h2 class="chap__h"><em>Chaat</em></h2>
+      <p class="chap__lede">Ārambh: fifteen chaats, and the meal begins.</p>
+      <ol class="dishes"><li style="--i:0"><span class="n">01</span><span class="nm">Chowpatty Pani Puri Shots</span><span class="sub">Pani Puri / Golgappa</span></li><li style="--i:1"><span class="n">02</span><span class="nm">Malai Moti Dahi Puri</span><span class="sub">Dahi Batata Puri</span></li><li style="--i:2"><span class="n">03</span><span class="nm">Purani Dilli Papdi Chaat</span><span class="sub">Papdi Chaat</span></li><li style="--i:3"><span class="n">04</span><span class="nm">Juhu Beach Bhel</span><span class="sub">Bhel Puri</span></li><li style="--i:4"><span class="n">05</span><span class="nm">Samosa Shringar Chaat</span><span class="sub">Samosa Chaat</span></li><li style="--i:5"><span class="n">06</span><span class="nm">Dilli Dil Tikki</span><span class="sub">Aloo Tikki Chaat</span></li><li style="--i:6"><span class="n">07</span><span class="nm">Hass & Hing Chaat</span><span class="sub">Avocado Chaat, a Karva creation</span></li><li style="--i:7"><span class="n">08</span><span class="nm">Palak Patta Chaat</span><span class="sub">Crispy Spinach Chaat</span></li><li style="--i:8"><span class="n">09</span><span class="nm">Shakarkandi Chaat Salad</span><span class="sub">Shakarkandi Chaat</span></li><li style="--i:9"><span class="n">10</span><span class="nm">Rajasthani Pyaaz Ki Kachoori</span><span class="sub">Pyaaz Kachori</span></li><li style="--i:10"><span class="n">11</span><span class="nm">Mini Raj Kachoori</span><span class="sub">Raj Kachori</span></li><li style="--i:11"><span class="n">12</span><span class="nm">Avocado Dahi Poori</span><span class="sub">Dahi Puri with Tadka Guacamole</span></li><li style="--i:12"><span class="n">13</span><span class="nm">Nachos Paapdi Chaat</span><span class="sub">Indo-Mex Papdi Chaat, a Karva creation</span></li><li style="--i:13"><span class="n">14</span><span class="nm">Kamal Kakkdi Chaat</span><span class="sub">Crispy Lotus Stem Chaat</span></li><li style="--i:14"><span class="n">15</span><span class="nm">Panchmel Dal Mathri</span><span class="sub">Panchmel Dal with Mathri</span></li></ol>
+      <figure class="band"><div class="veil" data-veil><img src="assets/photo/papdi-chaat-1920.jpg" srcset="assets/photo/papdi-chaat-960.jpg 960w, assets/photo/papdi-chaat-1920.jpg 1920w, assets/photo/papdi-chaat-3840.jpg 3840w" sizes="(min-width: 1080px) 46vw, 100vw" width="1920" height="1280" alt="Papdi chaat with yoghurt, pomegranate and sev." loading="lazy" decoding="async"></div><figcaption class="cap">Stand-in photograph: papdi chaat</figcaption></figure>
+      <div class="chap__more"><a class="btn btn--gold" href="chaat.html">Meet them at the counter</a><span class="veg"><span class="veg__mark" aria-hidden="true"></span>All fifteen are vegetarian</span></div>
+    </section>
+    <section class="chap" role="tabpanel" id="p-soups" aria-labelledby="t-soups" tabindex="0">
+      <p class="chap__spice"><span class="sw" style="--c:#9E9A5A" aria-hidden="true"></span>Fennel</p>
+      <h2 class="chap__h"><em>Soups</em></h2>
+      <p class="chap__lede">Four bowls to start slowly.</p>
+      <ol class="dishes"><li style="--i:0"><span class="n">01</span><span class="nm">Badaam ka Shorba</span></li><li style="--i:1"><span class="n">02</span><span class="nm">Gulnaar Tamatar</span></li><li style="--i:2"><span class="n">03</span><span class="nm">Murgh Yakhni</span></li><li style="--i:3"><span class="n">04</span><span class="nm">Tom Kha Nariyal</span></li></ol>
+      
+    </section>
+    <section class="chap" role="tabpanel" id="p-appetizers" aria-labelledby="t-appetizers" tabindex="0">
+      <p class="chap__spice"><span class="sw" style="--c:#5A3E26" aria-hidden="true"></span>Mustard seed</p>
+      <h2 class="chap__h"><em>Appetizers</em></h2>
+      <p class="chap__lede">Crisp, hot, from the kadai.</p>
+      <ol class="dishes"><li style="--i:0"><span class="n">01</span><span class="nm">Gobhi Sixty-Five</span></li><li style="--i:1"><span class="n">02</span><span class="nm">Samosa Trio</span></li><li style="--i:2"><span class="n">03</span><span class="nm">Amritsari Machhi</span></li><li style="--i:3"><span class="n">04</span><span class="nm">Kurkure Bhindi</span></li><li style="--i:4"><span class="n">05</span><span class="nm">Kozhi Milagu Fry</span></li><li style="--i:5"><span class="n">06</span><span class="nm">Prawn Koliwada</span></li></ol>
+      <figure class="band"><div class="veil" data-veil><img src="assets/photo/samosa-1920.jpg" srcset="assets/photo/samosa-960.jpg 960w, assets/photo/samosa-1920.jpg 1920w, assets/photo/samosa-3840.jpg 3840w" sizes="(min-width: 1080px) 46vw, 100vw" width="1920" height="1280" alt="Three samosas with green chilli and pomegranate on a wooden board." loading="lazy" decoding="async"></div><figcaption class="cap">Stand-in photograph: samosas</figcaption></figure>
+      
+    </section>
+    <section class="chap" role="tabpanel" id="p-kebabs" aria-labelledby="t-kebabs" tabindex="0">
+      <p class="chap__spice"><span class="sw" style="--c:#6E4A30" aria-hidden="true"></span>Garam masala</p>
+      <h2 class="chap__h"><em>Kebabs</em></h2>
+      <p class="chap__lede">From the tandoor, charred at the edges.</p>
+      <ol class="dishes"><li style="--i:0"><span class="n">01</span><span class="nm">Galouti of Lamb</span></li><li style="--i:1"><span class="n">02</span><span class="nm">Kakori Seekh</span></li><li style="--i:2"><span class="n">03</span><span class="nm">Murgh Malai Tikka</span></li><li style="--i:3"><span class="n">04</span><span class="nm">Barrah Chaap</span></li><li style="--i:4"><span class="n">05</span><span class="nm">Tandoori Jhinga</span></li><li style="--i:5"><span class="n">06</span><span class="nm">Paneer Achari Tikka</span></li></ol>
+      <figure class="band"><div class="veil" data-veil><img src="assets/photo/kebab-skewers-1920.jpg" srcset="assets/photo/kebab-skewers-960.jpg 960w, assets/photo/kebab-skewers-1920.jpg 1920w, assets/photo/kebab-skewers-3840.jpg 3840w" sizes="(min-width: 1080px) 46vw, 100vw" width="1920" height="1280" alt="A row of kebab skewers over a grill." loading="lazy" decoding="async"></div><figcaption class="cap">Stand-in photograph: kebab skewers</figcaption></figure>
+      
+    </section>
+    <section class="chap" role="tabpanel" id="p-curries" aria-labelledby="t-curries" tabindex="0">
+      <p class="chap__spice"><span class="sw" style="--c:#D9A21B" aria-hidden="true"></span>Turmeric</p>
+      <h2 class="chap__h"><em>Curries</em></h2>
+      <p class="chap__lede">Slow gravies, finished with butter and cream.</p>
+      <ol class="dishes"><li style="--i:0"><span class="n">01</span><span class="nm">Murgh Makhani</span></li><li style="--i:1"><span class="n">02</span><span class="nm">Rogan Josh</span></li><li style="--i:2"><span class="n">03</span><span class="nm">Chicken Tikka Masala</span></li><li style="--i:3"><span class="n">04</span><span class="nm">Chicken Butter Masala</span></li><li style="--i:4"><span class="n">05</span><span class="nm">Paneer Butter Masala</span></li><li style="--i:5"><span class="n">06</span><span class="nm">Paneer Tikka Masala</span></li><li style="--i:6"><span class="n">07</span><span class="nm">Malai Kofta</span></li><li style="--i:7"><span class="n">08</span><span class="nm">Dal Makhni</span></li></ol>
+      <figure class="band"><div class="veil" data-veil><img src="assets/photo/butter-chicken-1920.jpg" srcset="assets/photo/butter-chicken-960.jpg 960w, assets/photo/butter-chicken-1920.jpg 1920w, assets/photo/butter-chicken-3840.jpg 3840w" sizes="(min-width: 1080px) 46vw, 100vw" width="1920" height="1280" alt="Butter chicken with a swirl of cream." loading="lazy" decoding="async"></div><figcaption class="cap">Stand-in photograph: butter chicken</figcaption></figure>
+      
+    </section>
+    <section class="chap" role="tabpanel" id="p-south-indian" aria-labelledby="t-south-indian" tabindex="0">
+      <p class="chap__spice"><span class="sw" style="--c:#A88A5C" aria-hidden="true"></span>Coriander seed</p>
+      <h2 class="chap__h">South <em>Indian</em></h2>
+      <p class="chap__lede">Ghee roast, curry leaf and coconut.</p>
+      <ol class="dishes"><li style="--i:0"><span class="n">01</span><span class="nm">Appam & Ishtew</span></li><li style="--i:1"><span class="n">02</span><span class="nm">Ghee Roast Dosa</span></li><li style="--i:2"><span class="n">03</span><span class="nm">Chettinad Kozhi</span></li><li style="--i:3"><span class="n">04</span><span class="nm">Podi Idli</span></li><li style="--i:4"><span class="n">05</span><span class="nm">Uttapam of Millet</span></li><li style="--i:5"><span class="n">06</span><span class="nm">Andhra Gongura Royyala</span></li><li style="--i:6"><span class="n">07</span><span class="nm">Vada Sambhar</span></li></ol>
+      <figure class="band"><div class="veil" data-veil><img src="assets/photo/dosa-1920.jpg" srcset="assets/photo/dosa-960.jpg 960w, assets/photo/dosa-1920.jpg 1920w, assets/photo/dosa-3840.jpg 3840w" sizes="(min-width: 1080px) 46vw, 100vw" width="1920" height="1280" alt="A crisp dosa with sambar and chutneys on a wooden table." loading="lazy" decoding="async"></div><figcaption class="cap">Stand-in photograph: dosa with sambar</figcaption></figure>
+      
+    </section>
+    <section class="chap" role="tabpanel" id="p-biryani" aria-labelledby="t-biryani" tabindex="0">
+      <p class="chap__spice"><span class="sw" style="--c:#C2401A" aria-hidden="true"></span>Saffron</p>
+      <h2 class="chap__h">Rice &amp; <em>biryani</em></h2>
+      <p class="chap__lede">Sealed, and slow on dum.</p>
+      <ol class="dishes"><li style="--i:0"><span class="n">01</span><span class="nm">Hyderabadi Gosht</span></li><li style="--i:1"><span class="n">02</span><span class="nm">Subz Dum Biryani</span></li><li style="--i:2"><span class="n">03</span><span class="nm">Mutton Biryani</span></li><li style="--i:3"><span class="n">04</span><span class="nm">Chicken Biryani</span></li></ol>
+      <figure class="band"><div class="veil" data-veil><img src="assets/photo/biryani-bowl-1920.jpg" srcset="assets/photo/biryani-bowl-960.jpg 960w, assets/photo/biryani-bowl-1920.jpg 1920w, assets/photo/biryani-bowl-3840.jpg 3840w" sizes="(min-width: 1080px) 46vw, 100vw" width="1920" height="1280" alt="A bowl of chicken biryani." loading="lazy" decoding="async"></div><figcaption class="cap">Stand-in photograph: chicken biryani</figcaption></figure>
+      
+    </section>
+    <section class="chap" role="tabpanel" id="p-breads" aria-labelledby="t-breads" tabindex="0">
+      <p class="chap__spice"><span class="sw" style="--c:#7A5A36" aria-hidden="true"></span>Cumin</p>
+      <h2 class="chap__h"><em>Breads</em></h2>
+      <p class="chap__lede">Torn warm, straight from the tandoor.</p>
+      <ol class="dishes"><li style="--i:0"><span class="n">01</span><span class="nm">Lachha Paratha</span></li><li style="--i:1"><span class="n">02</span><span class="nm">Amritsari Kulcha</span></li><li style="--i:2"><span class="n">03</span><span class="nm">Phulke</span></li><li style="--i:3"><span class="n">04</span><span class="nm">Tandoori Roti</span></li><li style="--i:4"><span class="n">05</span><span class="nm">Butter Naan</span></li><li style="--i:5"><span class="n">06</span><span class="nm">Butter Garlic Naan</span></li></ol>
+      <figure class="band"><div class="veil" data-veil><img src="assets/photo/tandoori-naan-1920.jpg" srcset="assets/photo/tandoori-naan-960.jpg 960w, assets/photo/tandoori-naan-1920.jpg 1920w, assets/photo/tandoori-naan-3840.jpg 3840w" sizes="(min-width: 1080px) 46vw, 100vw" width="1920" height="1280" alt="Baskets of naan beside tandoori chicken on banana leaf." loading="lazy" decoding="async"></div><figcaption class="cap">Stand-in photograph: naan baskets and tandoori chicken</figcaption></figure>
+      
+    </section>
+    <section class="chap" role="tabpanel" id="p-desserts" aria-labelledby="t-desserts" tabindex="0">
+      <p class="chap__spice"><span class="sw" style="--c:#8C9E5E" aria-hidden="true"></span>Green cardamom</p>
+      <h2 class="chap__h"><em>Desserts</em></h2>
+      <p class="chap__lede">Saffron, cardamom, and a last spoonful.</p>
+      <ol class="dishes"><li style="--i:0"><span class="n">01</span><span class="nm">Shahi Tukda</span></li><li style="--i:1"><span class="n">02</span><span class="nm">Kesar Phirni</span></li><li style="--i:2"><span class="n">03</span><span class="nm">Moong Dal Halwa with pistachio sablé &amp; kunafa</span></li></ol>
+      
+    </section>
+
+    <section class="chap" role="tabpanel" id="p-thai" aria-labelledby="t-thai" tabindex="0">
+      <p class="chap__spice"><span class="sw" style="--c:#D9CFA8" aria-hidden="true"></span>Lemongrass and soy</p>
+      <h2 class="chap__h">Thai <em>kitchen</em></h2>
+      <p class="chap__lede">The second kitchen. Two dishes to begin; the full Thai menu is at the table.</p>
+      <ol class="dishes"><li style="--i:0"><span class="n">01</span><span class="nm">Tom Kha</span></li><li style="--i:1"><span class="n">02</span><span class="nm">Pad See Ew</span></li></ol>
+      <div class="chap__more"><a class="btn btn--line" href="table.html">Come to the table</a></div>
+    </section>
+    </div>
+  </div>
+</main>
+<footer class="foot">
+  <div class="foot__in">
+    <div>
+      <p class="foot__brand">Karva</p>
+      <p>Indian slow-cooking, with a Thai kitchen beside it. Two kitchens, one table.</p>
+    </div>
+    <div>
+      <h2>Visit</h2>
+      <address>211 E Eldorado Pkwy #100<br>Little Elm, TX 75068</address>
+      <p><a href="tel:+12146180078">(214) 618-0078</a><br><a href="mailto:support@karvatx.com">support@karvatx.com</a></p>
+    </div>
+    <div>
+      <h2>Hours, every day</h2>
+      <p>Lunch 11 am – 2 pm<br>Dinner 5 – 11 pm<br>Closed 2 – 5 pm between services</p>
+    </div>
+    <div class="foot__base">
+      <p>Photography shown is placeholder (Unsplash / AI).</p>
+      <button class="motion" type="button" data-motion-toggle hidden aria-pressed="false"><span class="motion__track" aria-hidden="true"></span><span class="ml">Motion</span> <b data-motion-state>On</b></button>
+    </div>
+  </div>
+</footer>
+<nav class="bar" aria-label="Quick actions">
+  <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>11–2 · 5–11</span></p>
+  <a href="tel:+12146180078"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6.2 2.8 4.4 3.3c-.9.3-1.5 1.2-1.3 2.1.9 5.4 5.1 9.6 10.5 10.5.9.2 1.8-.4 2.1-1.3l.5-1.8c.2-.6-.1-1.2-.7-1.5l-2.3-1c-.5-.2-1.1-.1-1.5.3l-.9 1c-1.7-.8-3.1-2.2-3.9-3.9l1-.9c.4-.4.5-1 .3-1.5l-1-2.3c-.3-.6-.9-.9-1.5-.7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=211+E+Eldorado+Pkwy+%23100%2C+Little+Elm%2C+TX+75068" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s5.5-5.2 5.5-9.6A5.5 5.5 0 0 0 4.5 8.4C4.5 12.8 10 18 10 18z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="10" cy="8.4" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Directions</a>
+  <a href="menu.html"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="10" cy="5.4" r="1.2" fill="currentColor"/><circle cx="14.4" cy="10" r="1.2" fill="currentColor"/><circle cx="10" cy="14.6" r="1.2" fill="currentColor"/><circle cx="5.6" cy="10" r="1.2" fill="currentColor"/></svg>Menu</a>
+  <a class="bar__cta" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script src="karva-motion-shim.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Karva · Ārambh, the chaat counter</title>
+<meta name="description" content="Ārambh: fifteen signature chaats at the Karva counter, with their stories, plating and allergens.">
+<meta name="theme-color" content="#050403">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<script>
+/* Motion state before first paint: follow the OS unless the visitor chose. */
+(function (d) {
+  d.classList.add('js');
+  var o = null; try { o = localStorage.getItem('karva-motion'); } catch (e) {}
+  var r = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var on = o === 'on' || (o !== 'off' && !r);
+  d.setAttribute('data-motion', on ? 'on' : 'off');
+  if (on && window.WebGLRenderingContext && !/[?&]fx=off/.test(location.search)) d.classList.add('fx-pending');
+})(document.documentElement);
+</script>
+<link rel="stylesheet" href="css/aroma.css">
+<script type="module" src="js/counter.js"></script>
+</head>
+<body data-atmos="chaat">
+<div class="haze" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" data-nav>
+  <div class="nav__in">
+    <a class="brand" href="index.html" aria-label="Karva, home">Karva</a>
+    <nav class="nav__links" aria-label="Pages"><a href="index.html">Aroma</a><span class="sep" aria-hidden="true">·</span><a href="menu.html">Dabba</a><span class="sep" aria-hidden="true">·</span><a href="chaat.html" aria-current="page">Chaat</a><span class="sep" aria-hidden="true">·</span><a href="table.html">Table</a></nav>
+    <div class="nav__acts">
+      <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>11–2 · 5–11</span></p>
+      <button class="motion" type="button" data-motion-toggle hidden aria-pressed="false"><span class="motion__track" aria-hidden="true"></span><span class="ml">Motion</span> <b data-motion-state>On</b></button>
+      <a class="btn btn--gold btn--sm" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve</a>
+      <details class="mnav">
+        <summary aria-label="Open pages menu"><span class="mnav__ic" aria-hidden="true"></span>Pages</summary>
+        <div class="mnav__sheet">
+          <nav aria-label="Pages"><a class="big" href="index.html"><small>01</small>Aroma</a><a class="big" href="menu.html"><small>02</small>Dabba</a><a class="big" href="chaat.html" aria-current="page"><small>03</small>Chaat</a><a class="big" href="table.html"><small>04</small>Table</a></nav>
+          <div class="mnav__foot">
+            <a class="btn btn--gold" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve</a>
+            <a class="btn btn--line" href="tel:+12146180078">Call (214) 618-0078</a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+  <header class="phead" data-zone="0.5">
+    <span class="kicker">The chaat counter</span>
+    <h1>Ārambh<em>.</em></h1>
+    <p>Fifteen chaats. The meal begins here.</p>
+  </header>
+  <section class="counter" aria-label="The chaat counter">
+    <ul class="counter__track" tabindex="0" aria-label="Fifteen chaats, scroll sideways">
+      <li class="counter__item"><a class="plate" href="#c-pani-puri-shots"><span class="plate__ph"><img src="assets/chaat/pani-puri-shots.jpg" srcset="assets/chaat/pani-puri-shots.jpg 479w, assets/chaat/pani-puri-shots@2x.jpg 958w" sizes="250px" width="479" height="599" alt="" decoding="async"></span><span class="plate__no">01</span><span class="plate__nm">Chowpatty Pani Puri Shots</span><span class="plate__sub">Pani Puri / Golgappa</span></a></li>
+      <li class="counter__item"><a class="plate" href="#c-dahi-puri"><span class="plate__ph"><img src="assets/chaat/dahi-puri.jpg" srcset="assets/chaat/dahi-puri.jpg 479w, assets/chaat/dahi-puri@2x.jpg 958w" sizes="250px" width="479" height="599" alt="" decoding="async"></span><span class="plate__no">02</span><span class="plate__nm">Malai Moti Dahi Puri</span><span class="plate__sub">Dahi Batata Puri</span></a></li>
+      <li class="counter__item"><a class="plate" href="#c-papdi-chaat"><span class="plate__ph"><img src="assets/chaat/papdi-chaat.jpg" srcset="assets/chaat/papdi-chaat.jpg 479w, assets/chaat/papdi-chaat@2x.jpg 958w" sizes="250px" width="479" height="599" alt="" decoding="async"></span><span class="plate__no">03</span><span class="plate__nm">Purani Dilli Papdi Chaat</span><span class="plate__sub">Papdi Chaat</span></a></li>
+      <li class="counter__item"><a class="plate" href="#c-juhu-bhel"><span class="plate__ph"><img src="assets/chaat/juhu-bhel.jpg" srcset="assets/chaat/juhu-bhel.jpg 479w, assets/chaat/juhu-bhel@2x.jpg 958w" sizes="250px" width="479" height="599" alt="" decoding="async"></span><span class="plate__no">04</span><span class="plate__nm">Juhu Beach Bhel</span><span class="plate__sub">Bhel Puri</span></a></li>
+      <li class="counter__item"><a class="plate" href="#c-samosa-chaat"><span class="plate__ph"><img src="assets/chaat/samosa-chaat.jpg" srcset="assets/chaat/samosa-chaat.jpg 479w, assets/chaat/samosa-chaat@2x.jpg 958w" sizes="250px" width="479" height="599" alt="" loading="lazy" decoding="async"></span><span class="plate__no">05</span><span class="plate__nm">Samosa Shringar Chaat</span><span class="plate__sub">Samosa Chaat</span></a></li>
+      <li class="counter__item"><a class="plate" href="#c-dilli-dil-tikki"><span class="plate__ph"><img src="assets/chaat/dilli-dil-tikki.jpg" srcset="assets/chaat/dilli-dil-tikki.jpg 479w, assets/chaat/dilli-dil-tikki@2x.jpg 958w" sizes="250px" width="479" height="599" alt="" loading="lazy" decoding="async"></span><span class="plate__no">06</span><span class="plate__nm">Dilli Dil Tikki</span><span class="plate__sub">Aloo Tikki Chaat</span></a></li>
+      <li class="counter__item"><a class="plate" href="#c-hass-hing-chaat"><span class="plate__ph"><img src="assets/chaat/hass-hing-chaat.jpg" srcset="assets/chaat/hass-hing-chaat.jpg 479w, assets/chaat/hass-hing-chaat@2x.jpg 958w" sizes="250px" width="479" height="599" alt="" loading="lazy" decoding="async"></span><span class="plate__no">07</span><span class="plate__nm">Hass & Hing Chaat</span><span class="plate__sub">Avocado Chaat, a Karva creation</span></a></li>
+      <li class="counter__item"><a class="plate" href="#c-palak-patta-chaat"><span class="plate__ph"><img src="assets/chaat/palak-patta-chaat.jpg" srcset="assets/chaat/palak-patta-chaat.jpg 479w, assets/chaat/palak-patta-chaat@2x.jpg 958w" sizes="250px" width="479" height="599" alt="" loading="lazy" decoding="async"></span><span class="plate__no">08</span><span class="plate__nm">Palak Patta Chaat</span><span class="plate__sub">Crispy Spinach Chaat</span></a></li>
+      <li class="counter__item"><a class="plate" href="#c-shakarkandi-chaat"><span class="plate__ph"><img src="assets/chaat/shakarkandi-chaat.jpg" srcset="assets/chaat/shakarkandi-chaat.jpg 479w, assets/chaat/shakarkandi-chaat@2x.jpg 958w" sizes="250px" width="479" height="599" alt="" loading="lazy" decoding="async"></span><span class="plate__no">09</span><span class="plate__nm">Shakarkandi Chaat Salad</span><span class="plate__sub">Shakarkandi Chaat</span></a></li>
+      <li class="counter__item"><a class="plate" href="#c-pyaaz-kachoori"><span class="plate__ph"><img src="assets/chaat/pyaaz-kachoori.jpg" srcset="assets/chaat/pyaaz-kachoori.jpg 479w, assets/chaat/pyaaz-kachoori@2x.jpg 958w" sizes="250px" width="479" height="599" alt="" loading="lazy" decoding="async"></span><span class="plate__no">10</span><span class="plate__nm">Rajasthani Pyaaz Ki Kachoori</span><span class="plate__sub">Pyaaz Kachori</span></a></li>
+      <li class="counter__item"><a class="plate" href="#c-mini-raj-kachoori"><span class="plate__ph"><img src="assets/chaat/mini-raj-kachoori.jpg" srcset="assets/chaat/mini-raj-kachoori.jpg 479w, assets/chaat/mini-raj-kachoori@2x.jpg 958w" sizes="250px" width="479" height="599" alt="" loading="lazy" decoding="async"></span><span class="plate__no">11</span><span class="plate__nm">Mini Raj Kachoori</span><span class="plate__sub">Raj Kachori</span></a></li>
+      <li class="counter__item"><a class="plate" href="#c-avocado-dahi-poori"><span class="plate__ph"><img src="assets/chaat/avocado-dahi-poori.jpg" srcset="assets/chaat/avocado-dahi-poori.jpg 479w, assets/chaat/avocado-dahi-poori@2x.jpg 958w" sizes="250px" width="479" height="599" alt="" loading="lazy" decoding="async"></span><span class="plate__no">12</span><span class="plate__nm">Avocado Dahi Poori</span><span class="plate__sub">Dahi Puri with Tadka Guacamole</span></a></li>
+      <li class="counter__item"><a class="plate" href="#c-nachos-paapdi-chaat"><span class="plate__ph"><img src="assets/chaat/nachos-paapdi-chaat.jpg" srcset="assets/chaat/nachos-paapdi-chaat.jpg 479w, assets/chaat/nachos-paapdi-chaat@2x.jpg 958w" sizes="250px" width="479" height="599" alt="" loading="lazy" decoding="async"></span><span class="plate__no">13</span><span class="plate__nm">Nachos Paapdi Chaat</span><span class="plate__sub">Indo-Mex Papdi Chaat, a Karva creation</span></a></li>
+      <li class="counter__item"><a class="plate" href="#c-kamal-kakkdi-chaat"><span class="plate__ph"><img src="assets/chaat/kamal-kakkdi-chaat.jpg" srcset="assets/chaat/kamal-kakkdi-chaat.jpg 479w, assets/chaat/kamal-kakkdi-chaat@2x.jpg 958w" sizes="250px" width="479" height="599" alt="" loading="lazy" decoding="async"></span><span class="plate__no">14</span><span class="plate__nm">Kamal Kakkdi Chaat</span><span class="plate__sub">Crispy Lotus Stem Chaat</span></a></li>
+      <li class="counter__item"><a class="plate" href="#c-panchmel-dal-mathri"><span class="plate__ph"><img src="assets/chaat/panchmel-dal-mathri.jpg" srcset="assets/chaat/panchmel-dal-mathri.jpg 479w, assets/chaat/panchmel-dal-mathri@2x.jpg 958w" sizes="250px" width="479" height="599" alt="" loading="lazy" decoding="async"></span><span class="plate__no">15</span><span class="plate__nm">Panchmel Dal Mathri</span><span class="plate__sub">Panchmel Dal with Mathri</span></a></li>
+    </ul>
+    <div class="counter__slab" aria-hidden="true"></div>
+    <div class="counter__ctrl">
+      <p>Scroll the counter, or use the arrow keys.</p>
+      <div><button class="round" type="button" data-prev aria-label="Earlier chaats"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button> <button class="round" type="button" data-next aria-label="Later chaats"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+    </div>
+  </section>
+  <section class="ratios" aria-label="A note from the kitchen" data-zone="0.5">
+    <p>Ratios stay in the kitchen.</p>
+    <small>The stories and the plating are ours to share. Every chaat is vegetarian.</small>
+  </section>
+  <section class="ledger" aria-label="Every chaat in detail">
+    <article class="dish" id="c-pani-puri-shots" data-img="assets/chaat/pani-puri-shots" data-alt="AI-generated placeholder image of Chowpatty Pani Puri Shots.">
+      <p class="dish__no">01 <span class="veg"><span class="veg__mark" aria-hidden="true"></span>Vegetarian</span></p>
+      <h3 class="dish__name">Chowpatty Pani Puri Shots</h3>
+      <p class="dish__sub">Pani Puri / Golgappa · Sooji puris · spiced aloo-chana · pudina & imli pani, served as shots</p>
+      <p class="dish__story">Pani puri is one of India’s best-loved street snacks. In Mumbai it became a fixture of Chowpatty Beach, where vendors still serve it one puri at a time.</p>
+      <h4>On the plate</h4>
+      <ul class="dish__plate"><li>6 frosted shot glasses in a straight line on a long matte-black slate.</li><li>Alternate glasses with pudina pani and pudina-imli layered pani for two colours.</li><li>Puri sits on the rim, filling up, with sev and one micro coriander leaf.</li><li>A small brass bowl of extra imli pani at one end of the slate.</li></ul>
+      <p class="dish__allergens"><b>Allergens</b>Gluten. Confirm every allergy with your server.</p>
+    </article>
+    <article class="dish" id="c-dahi-puri" data-img="assets/chaat/dahi-puri" data-alt="AI-generated placeholder image of Malai Moti Dahi Puri.">
+      <p class="dish__no">02 <span class="veg"><span class="veg__mark" aria-hidden="true"></span>Vegetarian</span></p>
+      <h3 class="dish__name">Malai Moti Dahi Puri</h3>
+      <p class="dish__sub">Dahi Batata Puri · Crisp puris · chilled meethi dahi · saunth & hari chutney · nylon sev</p>
+      <p class="dish__story">Dahi batata puri is a Mumbai street classic, born at the chaat stalls of Girgaum and Chowpatty. The name ‘Malai Moti’ (creamy pearls) refers to the six round puris coated in chilled dahi.</p>
+      <h4>On the plate</h4>
+      <ul class="dish__plate"><li>Six puris in a straight line on a long oval white porcelain plate.</li><li>Neat dots of saunth and hari chutney between the puris.</li><li>A crown of nylon sev and ruby pomegranate on each puri.</li></ul>
+      <p class="dish__allergens"><b>Allergens</b>Gluten, dairy. Confirm every allergy with your server.</p>
+    </article>
+    <article class="dish" id="c-papdi-chaat" data-img="assets/chaat/papdi-chaat" data-alt="AI-generated placeholder image of Purani Dilli Papdi Chaat.">
+      <p class="dish__no">03 <span class="veg"><span class="veg__mark" aria-hidden="true"></span>Vegetarian</span></p>
+      <h3 class="dish__name">Purani Dilli Papdi Chaat</h3>
+      <p class="dish__sub">Papdi Chaat · Papdi · aloo · kabuli chana · dahi · saunth & pudina chutney</p>
+      <p class="dish__story">Papdi chaat belongs to the lanes of Old Delhi around Chandni Chowk. A popular legend says chaat was created in Shah Jahan’s 17th-century Delhi, when spiced, tangy foods were thought to protect against the city’s water.</p>
+      <h4>On the plate</h4>
+      <ul class="dish__plate"><li>Wide, shallow matte-cream bowl.</li><li>Papdi fanned in a circle so the edges stand up through the dahi.</li><li>Zig-zag lines of the two chutneys; sev piled in the centre.</li></ul>
+      <p class="dish__allergens"><b>Allergens</b>Gluten, dairy. Confirm every allergy with your server.</p>
+    </article>
+    <article class="dish" id="c-juhu-bhel" data-img="assets/chaat/juhu-bhel" data-alt="AI-generated placeholder image of Juhu Beach Bhel.">
+      <p class="dish__no">04 <span class="veg"><span class="veg__mark" aria-hidden="true"></span>Vegetarian</span></p>
+      <h3 class="dish__name">Juhu Beach Bhel</h3>
+      <p class="dish__sub">Bhel Puri · Murmura · sev · kairi · pyaz-tamatar · teekhi-meethi chutney</p>
+      <p class="dish__story">Bhel puri is Mumbai’s beach snack, sold at sunset on Juhu and Chowpatty. It is mixed to order because puffed rice goes soft within minutes once the chutneys are added.</p>
+      <h4>On the plate</h4>
+      <ul class="dish__plate"><li>Packed into a ring mould on a white plate for a tall, neat stack; the ring is lifted.</li><li>Crowned with sev and fine kairi matchsticks; one whole papdi shard tucked in upright.</li><li>For a playful touch, a small newspaper-print paper cone on the side.</li></ul>
+      <p class="dish__allergens"><b>Allergens</b>Gluten, peanuts. Confirm every allergy with your server.</p>
+    </article>
+    <article class="dish" id="c-samosa-chaat" data-img="assets/chaat/samosa-chaat" data-alt="AI-generated placeholder image of Samosa Shringar Chaat.">
+      <p class="dish__no">05 <span class="veg"><span class="veg__mark" aria-hidden="true"></span>Vegetarian</span></p>
+      <h3 class="dish__name">Samosa Shringar Chaat</h3>
+      <p class="dish__sub">Samosa Chaat · Crushed samosa · Pindi chole · dahi · imli & hari chutney</p>
+      <p class="dish__story">The samosa came to India with Central Asian traders as the ‘sambosa’ and is described in court writings by the 13th–14th century. ‘Shringar’ means adornment: the humble samosa, dressed up.</p>
+      <h4>On the plate</h4>
+      <ul class="dish__plate"><li>Shallow black stoneware bowl so the chole shows dark against it.</li><li>Samosa pieces arranged so the pastry triangle points and filling both show.</li><li>A single swoosh of dahi across one side; chutney dots on the rim.</li></ul>
+      <p class="dish__allergens"><b>Allergens</b>Gluten, dairy. Confirm every allergy with your server.</p>
+    </article>
+    <article class="dish" id="c-dilli-dil-tikki" data-img="assets/chaat/dilli-dil-tikki" data-alt="AI-generated placeholder image of Dilli Dil Tikki.">
+      <p class="dish__no">06 <span class="veg"><span class="veg__mark" aria-hidden="true"></span>Vegetarian</span></p>
+      <h3 class="dish__name">Dilli Dil Tikki</h3>
+      <p class="dish__sub">Aloo Tikki Chaat · Heart-shaped aloo tikki · chole · meethi dahi · anardana</p>
+      <p class="dish__story">Aloo tikki chaat is a Delhi and Uttar Pradesh street favourite, shallow-fried on huge iron tawas until the crust is deep brown. Karva shapes the tikkis as hearts: ‘Dilli ka dil’, the heart of Delhi.</p>
+      <h4>On the plate</h4>
+      <ul class="dish__plate"><li>Matte-white round plate.</li><li>Two heart tikkis overlapping on a pool of chole.</li><li>Dahi spooned only on the centre of each heart so the crust stays visible.</li></ul>
+      <p class="dish__allergens"><b>Allergens</b>Dairy. Confirm every allergy with your server.</p>
+    </article>
+    <article class="dish" id="c-hass-hing-chaat" data-img="assets/chaat/hass-hing-chaat" data-alt="AI-generated placeholder image of Hass &amp; Hing Chaat.">
+      <p class="dish__no">07 <span class="veg"><span class="veg__mark" aria-hidden="true"></span>Vegetarian</span></p>
+      <h3 class="dish__name">Hass & Hing Chaat</h3>
+      <p class="dish__sub">Avocado Chaat, a Karva creation · Hing-tadka avocado · papdi · sev · chukandar & imli chutney</p>
+      <p class="dish__story">A Karva creation that brings the guacamole of Texas to the chaat tradition of North India. A hot tadka of mustard oil and hing (asafoetida) gives the soft avocado a savoury, chaat-shop depth.</p>
+      <h4>On the plate</h4>
+      <ul class="dish__plate"><li>Pale grey stone plate.</li><li>A bold magenta beetroot stroke as the base.</li><li>Three green avocado quenelles, each with two papdi standing upright like wings.</li></ul>
+      <p class="dish__allergens"><b>Allergens</b>Gluten, mustard. Confirm every allergy with your server.</p>
+    </article>
+    <article class="dish" id="c-palak-patta-chaat" data-img="assets/chaat/palak-patta-chaat" data-alt="AI-generated placeholder image of Palak Patta Chaat.">
+      <p class="dish__no">08 <span class="veg"><span class="veg__mark" aria-hidden="true"></span>Vegetarian</span></p>
+      <h3 class="dish__name">Palak Patta Chaat</h3>
+      <p class="dish__sub">Crispy Spinach Chaat · Crisp palak patta · dahi · imli-pudina chutney · sev</p>
+      <p class="dish__story">Palak patta chaat grew out of the North Indian pakora tradition: whole spinach leaves dipped in light besan batter and fried until shatteringly crisp. It was made famous by Delhi’s modern Indian restaurants in the 2000s.</p>
+      <h4>On the plate</h4>
+      <ul class="dish__plate"><li>Large flat white plate.</li><li>Leaves stacked loosely so they look light and airy, not flattened.</li><li>Dahi and chutneys in fine lines across the stack.</li></ul>
+      <p class="dish__allergens"><b>Allergens</b>Dairy. Confirm every allergy with your server.</p>
+    </article>
+    <article class="dish" id="c-shakarkandi-chaat" data-img="assets/chaat/shakarkandi-chaat" data-alt="AI-generated placeholder image of Shakarkandi Chaat Salad.">
+      <p class="dish__no">09 <span class="veg"><span class="veg__mark" aria-hidden="true"></span>Vegetarian</span></p>
+      <h3 class="dish__name">Shakarkandi Chaat Salad</h3>
+      <p class="dish__sub">Shakarkandi Chaat · Grilled shakarkandi · anardana glaze · chaat masala · roomali crisps</p>
+      <p class="dish__story">Every Delhi winter, street vendors roast shakarkandi (sweet potato) on coals, then slice it and toss it with lemon and chaat masala. Karva serves it as a warm salad, glazed with tangy pomegranate and topped with crisp shards of roomali roti.</p>
+      <h4>On the plate</h4>
+      <ul class="dish__plate"><li>Wide cream plate.</li><li>A thin swoosh of hari chutney as the base.</li><li>Glazed sweet potato in a loose pile, roomali crisps standing upright between the pieces.</li></ul>
+      <p class="dish__allergens"><b>Allergens</b>Gluten, peanuts, dairy (ghee). Confirm every allergy with your server.</p>
+    </article>
+    <article class="dish" id="c-pyaaz-kachoori" data-img="assets/chaat/pyaaz-kachoori" data-alt="AI-generated placeholder image of Rajasthani Pyaaz Ki Kachoori.">
+      <p class="dish__no">10 <span class="veg"><span class="veg__mark" aria-hidden="true"></span>Vegetarian</span></p>
+      <h3 class="dish__name">Rajasthani Pyaaz Ki Kachoori</h3>
+      <p class="dish__sub">Pyaaz Kachori · Crisp onion kachori · pulled jackfruit · achari aloo gravy</p>
+      <p class="dish__story">Pyaaz kachori is the pride of Jodhpur, where famous sweet shops fry thousands every morning. Karva serves the kachori with a tangy achari (pickle-spiced) potato gravy and spiced pulled jackfruit.</p>
+      <h4>On the plate</h4>
+      <ul class="dish__plate"><li>Small copper or brass-rimmed bowl.</li><li>Achari gravy as a pool; the kachori in the centre, cracked open at the top with jackfruit spilling out.</li><li>Pickled onion rings, saunth dots and coriander on the kachori.</li></ul>
+      <p class="dish__allergens"><b>Allergens</b>Gluten, mustard, dairy (ghee). Confirm every allergy with your server.</p>
+    </article>
+    <article class="dish" id="c-mini-raj-kachoori" data-img="assets/chaat/mini-raj-kachoori" data-alt="AI-generated placeholder image of Mini Raj Kachoori.">
+      <p class="dish__no">11 <span class="veg"><span class="veg__mark" aria-hidden="true"></span>Vegetarian</span></p>
+      <h3 class="dish__name">Mini Raj Kachoori</h3>
+      <p class="dish__sub">Raj Kachori · Mini raj kachori · khatta-meetha pumpkin · saunth chutney foam</p>
+      <p class="dish__story">Raj kachori, the ‘royal’ kachori, is a giant puffed shell filled with everything a chaat stall has to offer. Karva serves three bite-size versions, each filled with sweet-sour pumpkin and topped with a light saunth chutney foam.</p>
+      <h4>On the plate</h4>
+      <ul class="dish__plate"><li>Three mini kachoris in a triangle on a round white plate.</li><li>Each crowned with a cloud of pale brown saunth foam.</li><li>Pumpkin cubes and pomegranate scattered around the base.</li></ul>
+      <p class="dish__allergens"><b>Allergens</b>Gluten, dairy, soy (lecithin). Confirm every allergy with your server.</p>
+    </article>
+    <article class="dish" id="c-avocado-dahi-poori" data-img="assets/chaat/avocado-dahi-poori" data-alt="AI-generated placeholder image of Avocado Dahi Poori.">
+      <p class="dish__no">12 <span class="veg"><span class="veg__mark" aria-hidden="true"></span>Vegetarian</span></p>
+      <h3 class="dish__name">Avocado Dahi Poori</h3>
+      <p class="dish__sub">Dahi Puri with Tadka Guacamole · Semolina puris · tadka guac · sweet curd</p>
+      <p class="dish__story">A Karva twist on Mumbai’s dahi puri. In place of potato, each puri holds a ‘tadka guac’: avocado tempered with cumin, mustard seed and curry leaves in hot mustard oil.</p>
+      <h4>On the plate</h4>
+      <ul class="dish__plate"><li>Six puris on a long rectangular cream plate, two rows of three.</li><li>A crisp fried curry leaf on top of each puri.</li><li>Green guac visible at the opening under the white dahi.</li></ul>
+      <p class="dish__allergens"><b>Allergens</b>Gluten, dairy, mustard. Confirm every allergy with your server.</p>
+    </article>
+    <article class="dish" id="c-nachos-paapdi-chaat" data-img="assets/chaat/nachos-paapdi-chaat" data-alt="AI-generated placeholder image of Nachos Paapdi Chaat.">
+      <p class="dish__no">13 <span class="veg"><span class="veg__mark" aria-hidden="true"></span>Vegetarian</span></p>
+      <h3 class="dish__name">Nachos Paapdi Chaat</h3>
+      <p class="dish__sub">Indo-Mex Papdi Chaat, a Karva creation · Round tortilla chips · spiced cheese sauce · pico de gallo</p>
+      <p class="dish__story">A playful Karva creation for Texas. It crosses Old Delhi’s papdi chaat with Tex-Mex nachos: corn tortilla chips take the place of papdi, a chaat-spiced cheese sauce stands in for part of the dahi, and pico de gallo meets the familiar chaat chutneys.</p>
+      <h4>On the plate</h4>
+      <ul class="dish__plate"><li>Round black cast-iron skillet-style plate on a wooden board.</li><li>Chips fanned in a circle; cheese and dahi spooned in the centre.</li><li>Pico de gallo and sev piled in the middle.</li></ul>
+      <p class="dish__allergens"><b>Allergens</b>Dairy, gluten (sev, flour). Confirm every allergy with your server.</p>
+    </article>
+    <article class="dish" id="c-kamal-kakkdi-chaat" data-img="assets/chaat/kamal-kakkdi-chaat" data-alt="AI-generated placeholder image of Kamal Kakkdi Chaat.">
+      <p class="dish__no">14 <span class="veg"><span class="veg__mark" aria-hidden="true"></span>Vegetarian</span></p>
+      <h3 class="dish__name">Kamal Kakkdi Chaat</h3>
+      <p class="dish__sub">Crispy Lotus Stem Chaat · Crisp lotus stem · trio of chutneys · sesame crunch</p>
+      <p class="dish__story">Kamal kakdi (lotus stem) is prized in Kashmir, where it is called nadru, and in Sindhi cooking, where it is called beeh. Its lace-like cross-section looks beautiful when sliced thin.</p>
+      <h4>On the plate</h4>
+      <ul class="dish__plate"><li>Long white plate.</li><li>Three parallel chutney strokes: green, brown, magenta.</li><li>Lotus stem piled high across the strokes so the lacy holes show.</li></ul>
+      <p class="dish__allergens"><b>Allergens</b>Sesame. Confirm every allergy with your server.</p>
+    </article>
+    <article class="dish" id="c-panchmel-dal-mathri" data-img="assets/chaat/panchmel-dal-mathri" data-alt="AI-generated placeholder image of Panchmel Dal Mathri.">
+      <p class="dish__no">15 <span class="veg"><span class="veg__mark" aria-hidden="true"></span>Vegetarian</span></p>
+      <h3 class="dish__name">Panchmel Dal Mathri</h3>
+      <p class="dish__sub">Panchmel Dal with Mathri · Crisp mathri · tempered five-lentil dal · kachumber salsa</p>
+      <p class="dish__story">Panchmel dal, made from five lentils, is the classic partner to baati in Rajasthan’s royal kitchens of Mewar. Karva serves the thick, smoky dal as a warm chaat with mathri for scooping and a fresh kachumber salsa.</p>
+      <h4>On the plate</h4>
+      <ul class="dish__plate"><li>Small cast-iron or brass handi bowl on a wooden board.</li><li>Thick dal with a glossy ghee-chilli tadka on top and a mound of kachumber in the centre.</li><li>Five mathri tucked upright around one side of the bowl.</li></ul>
+      <p class="dish__allergens"><b>Allergens</b>Gluten, dairy (ghee). Confirm every allergy with your server.</p>
+    </article>
+  </section>
+</main>
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+  <button class="round sheet__close" type="button" data-sheet-close aria-label="Close"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1.5 1.5l11 11M12.5 1.5l-11 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+  <div class="sheet__in">
+    <div class="sheet__ph"><img alt="" width="479" height="599" sizes="(min-width: 820px) 380px, 260px" decoding="async"><span class="steam" aria-hidden="true"></span></div>
+    <div>
+      <div class="sheet__body dish"></div>
+      <div class="sheet__nav"><button class="btn btn--line" type="button" data-sheet-prev><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Previous</button><button class="btn btn--line" type="button" data-sheet-next>Next <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+    </div>
+  </div>
+</dialog>
+<footer class="foot">
+  <div class="foot__in">
+    <div>
+      <p class="foot__brand">Karva</p>
+      <p>Indian slow-cooking, with a Thai kitchen beside it. Two kitchens, one table.</p>
+    </div>
+    <div>
+      <h2>Visit</h2>
+      <address>211 E Eldorado Pkwy #100<br>Little Elm, TX 75068</address>
+      <p><a href="tel:+12146180078">(214) 618-0078</a><br><a href="mailto:support@karvatx.com">support@karvatx.com</a></p>
+    </div>
+    <div>
+      <h2>Hours, every day</h2>
+      <p>Lunch 11 am – 2 pm<br>Dinner 5 – 11 pm<br>Closed 2 – 5 pm between services</p>
+    </div>
+    <div class="foot__base">
+      <p>Photography shown is placeholder (Unsplash / AI).</p>
+      <button class="motion" type="button" data-motion-toggle hidden aria-pressed="false"><span class="motion__track" aria-hidden="true"></span><span class="ml">Motion</span> <b data-motion-state>On</b></button>
+    </div>
+  </div>
+</footer>
+<nav class="bar" aria-label="Quick actions">
+  <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>11–2 · 5–11</span></p>
+  <a href="tel:+12146180078"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6.2 2.8 4.4 3.3c-.9.3-1.5 1.2-1.3 2.1.9 5.4 5.1 9.6 10.5 10.5.9.2 1.8-.4 2.1-1.3l.5-1.8c.2-.6-.1-1.2-.7-1.5l-2.3-1c-.5-.2-1.1-.1-1.5.3l-.9 1c-1.7-.8-3.1-2.2-3.9-3.9l1-.9c.4-.4.5-1 .3-1.5l-1-2.3c-.3-.6-.9-.9-1.5-.7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=211+E+Eldorado+Pkwy+%23100%2C+Little+Elm%2C+TX+75068" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s5.5-5.2 5.5-9.6A5.5 5.5 0 0 0 4.5 8.4C4.5 12.8 10 18 10 18z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="10" cy="8.4" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Directions</a>
+  <a href="menu.html"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="10" cy="5.4" r="1.2" fill="currentColor"/><circle cx="14.4" cy="10" r="1.2" fill="currentColor"/><circle cx="10" cy="14.6" r="1.2" fill="currentColor"/><circle cx="5.6" cy="10" r="1.2" fill="currentColor"/></svg>Menu</a>
+  <a class="bar__cta" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script src="karva-motion-shim.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Karva · Come to the table</title>
+<meta name="description" content="Call Karva on (214) 618-0078. Hours, directions, reservations, private dining for 50, catering, birthdays and Diwali night in Little Elm, Texas.">
+<meta name="theme-color" content="#050403">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<script>
+/* Motion state before first paint: follow the OS unless the visitor chose. */
+(function (d) {
+  d.classList.add('js');
+  var o = null; try { o = localStorage.getItem('karva-motion'); } catch (e) {}
+  var r = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var on = o === 'on' || (o !== 'off' && !r);
+  d.setAttribute('data-motion', on ? 'on' : 'off');
+  if (on && window.WebGLRenderingContext && !/[?&]fx=off/.test(location.search)) d.classList.add('fx-pending');
+})(document.documentElement);
+</script>
+<link rel="stylesheet" href="css/aroma.css">
+<script type="module" src="js/site.js"></script>
+</head>
+<body data-atmos="table">
+<div class="haze" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" data-nav>
+  <div class="nav__in">
+    <a class="brand" href="index.html" aria-label="Karva, home">Karva</a>
+    <nav class="nav__links" aria-label="Pages"><a href="index.html">Aroma</a><span class="sep" aria-hidden="true">·</span><a href="menu.html">Dabba</a><span class="sep" aria-hidden="true">·</span><a href="chaat.html">Chaat</a><span class="sep" aria-hidden="true">·</span><a href="table.html" aria-current="page">Table</a></nav>
+    <div class="nav__acts">
+      <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>11–2 · 5–11</span></p>
+      <button class="motion" type="button" data-motion-toggle hidden aria-pressed="false"><span class="motion__track" aria-hidden="true"></span><span class="ml">Motion</span> <b data-motion-state>On</b></button>
+      <a class="btn btn--gold btn--sm" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve</a>
+      <details class="mnav">
+        <summary aria-label="Open pages menu"><span class="mnav__ic" aria-hidden="true"></span>Pages</summary>
+        <div class="mnav__sheet">
+          <nav aria-label="Pages"><a class="big" href="index.html"><small>01</small>Aroma</a><a class="big" href="menu.html"><small>02</small>Dabba</a><a class="big" href="chaat.html"><small>03</small>Chaat</a><a class="big" href="table.html" aria-current="page"><small>04</small>Table</a></nav>
+          <div class="mnav__foot">
+            <a class="btn btn--gold" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve</a>
+            <a class="btn btn--line" href="tel:+12146180078">Call (214) 618-0078</a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+  <header class="phead" data-zone="0.5">
+    <span class="kicker">Visit · Reserve · Gather</span>
+    <h1>Come to the <em>table.</em></h1>
+  </header>
+  <section class="phone-block" aria-label="Call us" data-zone="0.55">
+    <a class="phone" href="tel:+12146180078" aria-label="Call (214) 618-0078"><span class="a">(214)</span><span>618-0078</span></a>
+    <p>Tap to call. Reservations are by phone; parties over eight, please call first.</p>
+  </section>
+  <div class="tgrid">
+    <section class="tcard tcard--hours" aria-labelledby="h-hours">
+      <h2 id="h-hours">Hours, <em>every day.</em></h2>
+      <p class="status status--long" data-status-long><span class="status__dot" aria-hidden="true"></span><span data-status-text>Lunch 11 am – 2 pm · Dinner 5 – 11 pm</span></p>
+      <dl class="hours">
+        <div><dt>Lunch</dt><dd>11:00 am – 2:00 pm</dd></div>
+        <div><dt>Between services</dt><dd>Closed 2 – 5 pm</dd></div>
+        <div><dt>Dinner</dt><dd>5:00 pm – 11:00 pm</dd></div>
+      </dl>
+      <p data-status-live>Times are Little Elm time.</p>
+    </section>
+    <section class="tcard tcard--where" aria-labelledby="h-where">
+      <h2 id="h-where">Find <em>us.</em></h2>
+      <address class="addr">211 E Eldorado Pkwy #100<br>Little Elm, TX 75068</address>
+      <div><a class="btn btn--line" href="https://www.google.com/maps/search/?api=1&amp;query=211+E+Eldorado+Pkwy+%23100%2C+Little+Elm%2C+TX+75068" target="_blank" rel="noopener">Get directions</a></div>
+    </section>
+    <section class="tcard tcard--reserve" aria-labelledby="h-res">
+      <div>
+        <h2 id="h-res">Reserve a <em>table.</em></h2>
+        <p>Choose a date and a time, and we call to confirm. Text and email open your own app with everything filled in.</p>
+      </div>
+      <div><a class="btn btn--gold btn--xl" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Open reservations</a></div>
+    </section>
+  </div>
+  <section class="gather" aria-labelledby="h-gather">
+    <h2 id="h-gather">Gather <em>here.</em></h2>
+    <ul class="gl">
+      <li><h3>Private dining<small>Up to 50 guests</small></h3><p>A room of your own for up to fifty guests.</p><a class="btn btn--line" href="mailto:support@karvatx.com?subject=Private%20dining%20enquiry">Enquire by email</a></li>
+      <li><h3>Catering<small>Off-site</small></h3><p>Homes, weddings and corporate events, served buffet or family-style.</p><a class="btn btn--line" href="mailto:support@karvatx.com?subject=Catering%20enquiry">Enquire by email</a></li>
+      <li><h3>Birthdays &amp; Diwali night<small>Six to fifty</small></h3><p>Birthday parties for six to fifty guests, and Diwali night at Karva.</p><a class="btn btn--line" href="mailto:support@karvatx.com?subject=Birthday%20or%20Diwali%20night%20enquiry">Enquire by email</a></li>
+    </ul>
+  </section>
+  <div class="extras">
+    <section class="tcard" aria-labelledby="h-rew"><h2 id="h-rew">Karva <em>Rewards.</em></h2><p>Earn points when you dine. Sign up with your phone number at the table.</p></section>
+    <section class="tcard" aria-labelledby="h-know"><h2 id="h-know">Good to <em>know.</em></h2><p>No dress code, kids and families always welcome, vegetarian dishes on both menus, spice adjusted to taste, and tell your server about any allergies.</p></section>
+  </div>
+</main>
+<footer class="foot">
+  <div class="foot__in">
+    <div>
+      <p class="foot__brand">Karva</p>
+      <p>Indian slow-cooking, with a Thai kitchen beside it. Two kitchens, one table.</p>
+    </div>
+    <div>
+      <h2>Visit</h2>
+      <address>211 E Eldorado Pkwy #100<br>Little Elm, TX 75068</address>
+      <p><a href="tel:+12146180078">(214) 618-0078</a><br><a href="mailto:support@karvatx.com">support@karvatx.com</a></p>
+    </div>
+    <div>
+      <h2>Hours, every day</h2>
+      <p>Lunch 11 am – 2 pm<br>Dinner 5 – 11 pm<br>Closed 2 – 5 pm between services</p>
+    </div>
+    <div class="foot__base">
+      <p>Photography shown is placeholder (Unsplash / AI).</p>
+      <button class="motion" type="button" data-motion-toggle hidden aria-pressed="false"><span class="motion__track" aria-hidden="true"></span><span class="ml">Motion</span> <b data-motion-state>On</b></button>
+    </div>
+  </div>
+</footer>
+<nav class="bar" aria-label="Quick actions">
+  <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>11–2 · 5–11</span></p>
+  <a href="tel:+12146180078"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6.2 2.8 4.4 3.3c-.9.3-1.5 1.2-1.3 2.1.9 5.4 5.1 9.6 10.5 10.5.9.2 1.8-.4 2.1-1.3l.5-1.8c.2-.6-.1-1.2-.7-1.5l-2.3-1c-.5-.2-1.1-.1-1.5.3l-.9 1c-1.7-.8-3.1-2.2-3.9-3.9l1-.9c.4-.4.5-1 .3-1.5l-1-2.3c-.3-.6-.9-.9-1.5-.7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=211+E+Eldorado+Pkwy+%23100%2C+Little+Elm%2C+TX+75068" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s5.5-5.2 5.5-9.6A5.5 5.5 0 0 0 4.5 8.4C4.5 12.8 10 18 10 18z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="10" cy="8.4" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Directions</a>
+  <a href="menu.html"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="10" cy="5.4" r="1.2" fill="currentColor"/><circle cx="14.4" cy="10" r="1.2" fill="currentColor"/><circle cx="10" cy="14.6" r="1.2" fill="currentColor"/><circle cx="5.6" cy="10" r="1.2" fill="currentColor"/></svg>Menu</a>
+  <a class="bar__cta" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve</a>
+</nav>
+</body>
+</html>

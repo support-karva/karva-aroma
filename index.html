@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script src="karva-motion-shim.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Karva · Aroma first</title>
+<meta name="description" content="Karva, Indian slow-cooking with a Thai kitchen beside it, in Little Elm, Texas. You smell it before you see it.">
+<meta name="theme-color" content="#050403">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<script>
+/* Motion state before first paint: follow the OS unless the visitor chose. */
+(function (d) {
+  d.classList.add('js');
+  var o = null; try { o = localStorage.getItem('karva-motion'); } catch (e) {}
+  var r = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var on = o === 'on' || (o !== 'off' && !r);
+  d.setAttribute('data-motion', on ? 'on' : 'off');
+  if (on && window.WebGLRenderingContext && !/[?&]fx=off/.test(location.search)) d.classList.add('fx-pending');
+})(document.documentElement);
+</script>
+<link rel="stylesheet" href="css/aroma.css">
+<script type="module" src="js/home.js"></script>
+</head>
+<body data-atmos="aroma" data-no-enter>
+<div class="haze" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" data-nav>
+  <div class="nav__in">
+    <a class="brand" href="index.html" aria-label="Karva, home">Karva</a>
+    <nav class="nav__links" aria-label="Pages"><a href="index.html" aria-current="page">Aroma</a><span class="sep" aria-hidden="true">·</span><a href="menu.html">Dabba</a><span class="sep" aria-hidden="true">·</span><a href="chaat.html">Chaat</a><span class="sep" aria-hidden="true">·</span><a href="table.html">Table</a></nav>
+    <div class="nav__acts">
+      <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>11–2 · 5–11</span></p>
+      <button class="motion" type="button" data-motion-toggle hidden aria-pressed="false"><span class="motion__track" aria-hidden="true"></span><span class="ml">Motion</span> <b data-motion-state>On</b></button>
+      <a class="btn btn--gold btn--sm" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve</a>
+      <details class="mnav">
+        <summary aria-label="Open pages menu"><span class="mnav__ic" aria-hidden="true"></span>Pages</summary>
+        <div class="mnav__sheet">
+          <nav aria-label="Pages"><a class="big" href="index.html" aria-current="page"><small>01</small>Aroma</a><a class="big" href="menu.html"><small>02</small>Dabba</a><a class="big" href="chaat.html"><small>03</small>Chaat</a><a class="big" href="table.html"><small>04</small>Table</a></nav>
+          <div class="mnav__foot">
+            <a class="btn btn--gold" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve</a>
+            <a class="btn btn--line" href="tel:+12146180078">Call (214) 618-0078</a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title" data-tone="0.92,0.68,0.3">
+    <figure class="veil" data-veil>
+      <img src="assets/photo/bowls-dark-1920.jpg" srcset="assets/photo/bowls-dark-960.jpg 960w, assets/photo/bowls-dark-1920.jpg 1920w, assets/photo/bowls-dark-3840.jpg 3840w" sizes="100vw" width="1920" height="1280" alt="Curries, rice and whole spices on a dark table, seen from above." fetchpriority="high" decoding="async">
+    </figure>
+    <div class="hero__copy" data-zone="0.5">
+      <h1 class="hero__title legible" id="hero-title"><span class="ln">Aroma</span> <span class="ln">first.</span></h1>
+      <p class="hero__line legible">Indian slow-cooking, a Thai kitchen beside it. Little Elm, Texas.</p>
+      <p class="hint"><i aria-hidden="true"></i>Stir the smoke</p>
+    </div>
+    <div class="hero__foot">
+      <p class="cap">Stand-in photograph: curries and whole spices</p>
+      <a class="cue" href="#c1">Five courses</a>
+    </div>
+  </section>
+
+  <section class="course" id="c1" aria-labelledby="c1-h" data-tone="0.98,0.62,0.36" data-bloom="1,0.55,0.25" data-stir>
+    <figure class="veil" data-veil>
+      <img src="assets/photo/kebab-skewers-1920.jpg" srcset="assets/photo/kebab-skewers-960.jpg 960w, assets/photo/kebab-skewers-1920.jpg 1920w, assets/photo/kebab-skewers-3840.jpg 3840w" sizes="100vw" width="1920" height="1280" alt="Kebab skewers charring over a grill." loading="lazy" decoding="async">
+    </figure>
+    <p class="cap">Stand-in photograph: kebab skewers over a grill</p>
+    <div class="course__inner"><div class="course__text" data-zone="0.36">
+      <p class="course__no legible">Course 01</p>
+      <h2 class="course__word legible" id="c1-h">Smoke.</h2>
+      <p class="course__line legible">The tandoor speaks first: kakori seekh, malai tikka, barrah chaap.</p>
+    </div></div>
+  </section>
+  <section class="course course--right" id="c2" aria-labelledby="c2-h" data-tone="0.95,0.93,0.88" data-bloom="1,0.9,0.75" data-stir>
+    <figure class="veil" data-veil>
+      <img src="assets/photo/biryani-handi-1920.jpg" srcset="assets/photo/biryani-handi-960.jpg 960w, assets/photo/biryani-handi-1920.jpg 1920w, assets/photo/biryani-handi-3840.jpg 3840w" sizes="100vw" width="1920" height="1280" alt="Biryani in brass handis on a dark table." loading="lazy" decoding="async" style="object-position:50% 40%">
+    </figure>
+    <p class="cap">Stand-in photograph: biryani in brass handis</p>
+    <div class="course__inner"><div class="course__text" data-zone="0.36">
+      <p class="course__no legible">Course 02</p>
+      <h2 class="course__word legible" id="c2-h">Steam.</h2>
+      <p class="course__line legible">The seal breaks on a Hyderabadi biryani, slow-cooked on dum.</p>
+    </div></div>
+  </section>
+  <section class="course" id="c3" aria-labelledby="c3-h" data-tone="0.92,0.69,0.28" data-bloom="1,0.75,0.3" data-stir>
+    <figure class="veil" data-veil>
+      <img src="assets/photo/dal-makhani-1920.jpg" srcset="assets/photo/dal-makhani-960.jpg 960w, assets/photo/dal-makhani-1920.jpg 1920w, assets/photo/dal-makhani-3840.jpg 3840w" sizes="100vw" width="1920" height="1280" alt="Dal makhani with rice and flatbread." loading="lazy" decoding="async">
+    </figure>
+    <p class="cap">Stand-in photograph: dal makhani with rice and flatbread</p>
+    <div class="course__inner"><div class="course__text" data-zone="0.36">
+      <p class="course__no legible">Course 03</p>
+      <h2 class="course__word legible" id="c3-h">Ghee.</h2>
+      <p class="course__line legible">Dal makhni, butter masala, malai kofta: gold, and slow.</p>
+    </div></div>
+  </section>
+  <section class="course course--right" id="c4" aria-labelledby="c4-h" data-tone="0.98,0.8,0.42" data-bloom="1,0.65,0.2" data-stir>
+    <figure class="veil" data-veil>
+      <img src="assets/photo/spice-spoon-1920.jpg" srcset="assets/photo/spice-spoon-960.jpg 960w, assets/photo/spice-spoon-1920.jpg 1920w, assets/photo/spice-spoon-3840.jpg 3840w" sizes="100vw" width="1920" height="1280" alt="A wooden spoon of spices with turmeric spilled on a dark table." loading="lazy" decoding="async">
+    </figure>
+    <p class="cap">Stand-in photograph: a spoon of spices, turmeric spilled</p>
+    <div class="course__inner"><div class="course__text" data-zone="0.36">
+      <p class="course__no legible">Course 04</p>
+      <h2 class="course__word legible" id="c4-h">Fire.</h2>
+      <p class="course__line legible">Mustard seeds in hot oil, one sharp crackle: tap anywhere.</p>
+    </div></div>
+  </section>
+  <section class="course" id="c5" aria-labelledby="c5-h" data-tone="0.93,0.93,0.86" data-bloom="0.95,0.95,0.85" data-stir>
+    <figure class="veil" data-veil>
+      <img src="assets/photo/whole-spices-1920.jpg" srcset="assets/photo/whole-spices-960.jpg 960w, assets/photo/whole-spices-1920.jpg 1920w, assets/photo/whole-spices-3840.jpg 3840w" sizes="100vw" width="1920" height="1280" alt="Cardamom pods, star anise and cinnamon." loading="lazy" decoding="async">
+    </figure>
+    <p class="cap">Stand-in photograph: cardamom, star anise and cinnamon</p>
+    <div class="course__inner"><div class="course__text" data-zone="0.36">
+      <p class="course__no legible">Course 05</p>
+      <h2 class="course__word legible" id="c5-h">Sweet.</h2>
+      <p class="course__line legible">Kesar phirni, shahi tukda, and the last breath of cardamom.</p>
+    </div></div>
+  </section>
+
+  <section class="finale" aria-labelledby="fin-h" data-tone="0.92,0.66,0.3">
+    <div class="finale__in" data-zone="0.5">
+      <h2 class="finale__h" id="fin-h">Come and <em>breathe it in.</em></h2>
+      <div class="finale__acts">
+        <a class="btn btn--gold btn--xl" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve a table</a>
+        <a class="btn btn--line btn--xl" href="tel:+12146180078">Call (214) 618-0078</a>
+      </div>
+      <p class="finale__fine">Lunch 11 am – 2 pm and dinner 5 – 11 pm, every day, at 211 E Eldorado Pkwy, Little Elm.</p>
+      <div class="second">
+        <p class="kicker">The second kitchen</p>
+        <p>Tom kha and pad see ew from the Thai kitchen; the full Thai menu is at the table.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <div class="foot__in">
+    <div>
+      <p class="foot__brand">Karva</p>
+      <p>Indian slow-cooking, with a Thai kitchen beside it. Two kitchens, one table.</p>
+    </div>
+    <div>
+      <h2>Visit</h2>
+      <address>211 E Eldorado Pkwy #100<br>Little Elm, TX 75068</address>
+      <p><a href="tel:+12146180078">(214) 618-0078</a><br><a href="mailto:support@karvatx.com">support@karvatx.com</a></p>
+    </div>
+    <div>
+      <h2>Hours, every day</h2>
+      <p>Lunch 11 am – 2 pm<br>Dinner 5 – 11 pm<br>Closed 2 – 5 pm between services</p>
+    </div>
+    <div class="foot__base">
+      <p>Photography shown is placeholder (Unsplash / AI).</p>
+      <button class="motion" type="button" data-motion-toggle hidden aria-pressed="false"><span class="motion__track" aria-hidden="true"></span><span class="ml">Motion</span> <b data-motion-state>On</b></button>
+    </div>
+  </div>
+</footer>
+<nav class="bar" aria-label="Quick actions">
+  <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>11–2 · 5–11</span></p>
+  <a href="tel:+12146180078"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6.2 2.8 4.4 3.3c-.9.3-1.5 1.2-1.3 2.1.9 5.4 5.1 9.6 10.5 10.5.9.2 1.8-.4 2.1-1.3l.5-1.8c.2-.6-.1-1.2-.7-1.5l-2.3-1c-.5-.2-1.1-.1-1.5.3l-.9 1c-1.7-.8-3.1-2.2-3.9-3.9l1-.9c.4-.4.5-1 .3-1.5l-1-2.3c-.3-.6-.9-.9-1.5-.7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=211+E+Eldorado+Pkwy+%23100%2C+Little+Elm%2C+TX+75068" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s5.5-5.2 5.5-9.6A5.5 5.5 0 0 0 4.5 8.4C4.5 12.8 10 18 10 18z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="10" cy="8.4" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Directions</a>
+  <a href="menu.html"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="10" cy="5.4" r="1.2" fill="currentColor"/><circle cx="14.4" cy="10" r="1.2" fill="currentColor"/><circle cx="10" cy="14.6" r="1.2" fill="currentColor"/><circle cx="5.6" cy="10" r="1.2" fill="currentColor"/></svg>Menu</a>
+  <a class="bar__cta" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve</a>
+</nav>
+</body>
+</html>
