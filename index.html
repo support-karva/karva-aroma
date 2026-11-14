@@ -23,7 +23,7 @@
   if (on && window.WebGLRenderingContext && !/[?&]fx=off/.test(location.search)) d.classList.add('fx-pending');
 })(document.documentElement);
 </script>
-<link rel="stylesheet" href="css/aroma.css?v=8">
+<link rel="stylesheet" href="css/aroma.css?v=12">
 <link rel="preload" as="image" href="assets/brand/karva-logo-hd.webp" fetchpriority="high">
 <script type="module" src="js/home-logo.js"></script>
 <style>
@@ -49,7 +49,7 @@ html.logo-intro-on.fx-pending .hero:not(.is-released) .hero__line { animation-de
 <header class="nav" data-nav>
   <div class="nav__in">
     <a class="brand brand--logo" href="index.html"><img src="assets/brand/karva-logo-192.webp?v=2" width="502" height="192" alt="Karva, Indian-Thai cuisine. Home" decoding="async"></a>
-    <nav class="nav__links" aria-label="Pages"><a href="index.html" aria-current="page">Aroma</a><a href="drinks.html">Bar</a><a href="chaat.html">Chaat</a><a href="menu.html">Menu</a><a href="order.html">Order</a><div class="dd"><a class="dd__top" href="table.html">Reserve</a><button class="dd__btn" type="button" aria-expanded="false" aria-label="More Reserve pages"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dd__menu"><a href="table.html">Book a table</a><a href="parties.html">Parties</a><a href="events.html">Events</a></div></div><a href="catering.html">Catering</a><a href="locations.html">Location</a></nav>
+    <nav class="nav__links" aria-label="Pages"><a href="drinks.html">Bar</a><a href="chaat.html">Chaat</a><a href="menu.html" data-nav-menu="indian">Indian Menu</a><a href="menu.html#thai" data-nav-menu="thai">Thai Menu</a><a href="order.html">Order</a><div class="dd"><a class="dd__top" href="table.html">Reserve</a><button class="dd__btn" type="button" aria-expanded="false" aria-label="More Reserve pages"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dd__menu"><a href="table.html">Book a table</a><a href="parties.html">Parties</a><a href="events.html">Events</a></div></div><a href="catering.html">Catering</a><a href="locations.html">Location</a></nav>
     <div class="nav__acts">
       <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>11–3 · 5–11</span></p>
       <button class="motion" type="button" data-motion-toggle hidden aria-pressed="false"><span class="motion__track" aria-hidden="true"></span><span class="ml">Motion</span> <b data-motion-state>On</b></button>
@@ -57,7 +57,7 @@ html.logo-intro-on.fx-pending .hero:not(.is-released) .hero__line { animation-de
       <details class="mnav">
         <summary aria-label="Open pages menu"><span class="mnav__ic" aria-hidden="true"></span>Pages</summary>
         <div class="mnav__sheet">
-          <nav aria-label="Pages"><a class="big" href="index.html" aria-current="page"><small>01</small>Aroma</a><a class="big" href="drinks.html"><small>02</small>Bar</a><a class="big" href="chaat.html"><small>03</small>Chaat</a><a class="big" href="menu.html"><small>04</small>Menu</a><p class="mnav__sub"><a href="specials.html">Specials</a></p><a class="big" href="order.html"><small>05</small>Order</a><a class="big" href="table.html"><small>06</small>Reserve</a><p class="mnav__sub"><a href="parties.html">Parties</a><a href="events.html">Events</a></p><a class="big" href="catering.html"><small>07</small>Catering</a><a class="big" href="locations.html"><small>08</small>Location</a></nav>
+          <nav aria-label="Pages"><a class="big" href="drinks.html"><small>01</small>Bar</a><a class="big" href="chaat.html"><small>02</small>Chaat</a><a class="big" href="menu.html"><small>03</small>Indian Menu</a><a class="big" href="menu.html#thai"><small>04</small>Thai Menu</a><p class="mnav__sub"><a href="specials.html">Specials</a></p><a class="big" href="order.html"><small>05</small>Order</a><a class="big" href="table.html"><small>06</small>Reserve</a><p class="mnav__sub"><a href="parties.html">Parties</a><a href="events.html">Events</a></p><a class="big" href="catering.html"><small>07</small>Catering</a><a class="big" href="locations.html"><small>08</small>Location</a></nav>
           <div class="mnav__foot">
             <a class="btn btn--gold" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve</a>
             <a class="btn btn--line" href="tel:+12146180078">Call (214) 618-0078</a>
@@ -71,11 +71,11 @@ html.logo-intro-on.fx-pending .hero:not(.is-released) .hero__line { animation-de
 <main id="main">
   <section class="hero" aria-labelledby="hero-title" data-tone="0.92,0.68,0.3">
     <figure class="veil" data-veil>
-      <img src="assets/photo/bowls-dark-1920.jpg" srcset="assets/photo/bowls-dark-960.jpg 960w, assets/photo/bowls-dark-1920.jpg 1920w, assets/photo/bowls-dark-3840.jpg 3840w" sizes="100vw" width="1920" height="1280" alt="Curries, rice and whole spices on a dark table, seen from above." fetchpriority="high" decoding="async">
+      <img src="assets/photo/spread-1920.jpg" srcset="assets/photo/spread-960.jpg 960w, assets/photo/spread-1920.jpg 1920w, assets/photo/spread-2560.jpg 2560w" sizes="100vw" width="1920" height="1080" alt="Paneer curry, naan and rice beside a Thai red curry, pad thai and jasmine rice on a dark table." fetchpriority="high" decoding="async">
     </figure>
     <div class="hero__copy" data-zone="0.5">
       <h1 class="hero__title legible" id="hero-title"><span class="ln">Aroma</span> <span class="ln">first.</span></h1>
-      <p class="hero__line legible">Indian slow-cooking, a Thai kitchen beside it. Little Elm, Texas.</p>
+      <p class="hero__line legible"><span style="white-space:nowrap">Slow-cooked Indian soul.</span> <span style="white-space:nowrap">Fast-fired Thai krua.</span></p>
       <p class="hint"><i aria-hidden="true"></i>Stir the smoke</p>
     </div>
     <div class="hero__foot">

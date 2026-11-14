@@ -15,9 +15,15 @@ if ('IntersectionObserver' in window) {
   secs.forEach((s) => reveal.observe(s));
 
   let current = null;
+  // the top bar has "Indian Menu" and "Thai Menu": light up whichever part you are reading
+  const navMenus = $$('[data-nav-menu]');
+  const markNav = (which) => navMenus.forEach((a) => {
+    if (a.dataset.navMenu === which) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  });
   const mark = (id) => {
     if (id === current) return;
     current = id;
+    markNav(id === 'thai' ? 'thai' : 'indian');
     chips.forEach((a) => {
       const on = a.getAttribute('href') === `#${id}`;
       if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
