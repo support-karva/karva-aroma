@@ -9,6 +9,7 @@
 import { motionOn, onMotion, initMotionToggles } from './prefs.js';
 import { initStatus, chicagoMinutes, chicagoToday, clock, SERVICES } from './status.js';
 import { createFluid } from './fluid.js';
+import { createSmooth } from './smooth.js';
 
 export { motionOn, onMotion };
 export const $ = (s, r = document) => r.querySelector(s);
@@ -115,9 +116,12 @@ export function withFluid(fn) { if (fluid) fn(fluid); else fluidWaiters.push(fn)
 export const getFluid = () => fluid;
 
 const preset = PRESETS[document.body.dataset.atmos] || PRESETS.aroma;
+// wheel scrolling stepped together with the smoke, so photos never lag the page
+const smooth = createSmooth();
 const params = new URLSearchParams(location.search);
 
 function bootFluid() {
+  smooth.enabled = true;
   if (fluid) { fluid.start(); html.classList.add('fx'); return; }
   if (fluidFailed || params.get('fx') === 'off') { html.classList.remove('fx-pending'); return; }
   const canvas = document.createElement('canvas');
@@ -126,7 +130,8 @@ function bootFluid() {
   document.body.prepend(canvas);
   const f = createFluid(canvas, {
     config: preset.config,
-    onLost: () => { html.classList.remove('fx'); canvas.remove(); fluid = null; fluidFailed = true; }
+    beforeFrame: (t) => smooth.step(t),
+    onLost: () => { smooth.enabled = false; html.classList.remove('fx'); canvas.remove(); fluid = null; fluidFailed = true; }
   });
   if (!f) { canvas.remove(); fluidFailed = true; html.classList.remove('fx-pending'); return; }
   fluid = f;
@@ -143,6 +148,7 @@ function bootFluid() {
   fluidWaiters.splice(0).forEach((fn) => { try { fn(f); } catch (e) { console.error(e); } });
 }
 function stopFluid() {
+  smooth.enabled = false;
   if (!fluid) return;
   fluid.stop();
   html.classList.remove('fx', 'fx-pending');

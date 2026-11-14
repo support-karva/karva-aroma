@@ -383,7 +383,7 @@ void main () {
 
 /* quality ladder: dropped one rung at a time when frames run long */
 const LEVELS = [
-  { sim: 128, dye: 512, dpr: 2, iter: 20 },
+  { sim: 128, dye: 512, dpr: 1.5, iter: 20 },
   { sim: 96, dye: 384, dpr: 1.5, iter: 16 },
   { sim: 64, dye: 256, dpr: 1, iter: 12 }
 ];
@@ -938,6 +938,8 @@ export function createFluid(canvas, options = {}) {
     const raw = last ? (now - last) / 1000 : 1 / 60;
     last = now;
     adapt(raw);
+    // let the page scroll first, so this frame's photos are drawn where the page now is
+    if (options.beforeFrame) options.beforeFrame(now);
     tick(Math.min(raw, 1 / 60));
   }
   function tick(dt) {
