@@ -8,7 +8,7 @@ const dayFmt = new Intl.DateTimeFormat('en-US', {
 });
 
 export const SERVICES = [
-  { name: 'Lunch', open: 11 * 60, close: 14 * 60 },
+  { name: 'Lunch', open: 11 * 60, close: 15 * 60 },
   { name: 'Dinner', open: 17 * 60, close: 23 * 60 }
 ];
 

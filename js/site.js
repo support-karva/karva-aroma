@@ -293,7 +293,7 @@ function buildPanel() {
     <div class="panel__scrim" data-close></div>
     <div class="panel__box" role="dialog" aria-modal="true" aria-labelledby="rv-h">
       <div class="panel__top">
-        <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>11–2 · 5–11</span></p>
+        <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>11–3 · 5–11</span></p>
         <button type="button" class="panel__close" data-close aria-label="Close reservations">${ICON_X}</button>
       </div>
       <h2 class="panel__h" id="rv-h">A table, <em>warm.</em></h2>
@@ -314,7 +314,7 @@ function buildPanel() {
           <a class="btn btn--line" data-act="mail" href="mailto:${EMAIL}">Email the details</a>
         </div>
       </div>
-      <p class="panel__fine">Text and email open your own app with everything filled in. Nothing is sent until you press send. Lunch 11 am – 2 pm, dinner 5 – 11 pm, every day.</p>
+      <p class="panel__fine">Text and email open your own app with everything filled in. Nothing is sent until you press send. Lunch 11 am – 3 pm, dinner 5 – 11 pm, every day.</p>
     </div>`;
   document.body.appendChild(el);
 
