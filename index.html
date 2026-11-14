@@ -24,7 +24,24 @@
 })(document.documentElement);
 </script>
 <link rel="stylesheet" href="css/aroma.css?v=4">
-<script type="module" src="js/home.js"></script>
+<link rel="preload" as="image" href="assets/brand/karva-logo-hd.webp" fetchpriority="high">
+<script type="module" src="js/home-logo.js"></script>
+<style>
+/* the logo written in smoke before "Aroma first." */
+.logo-intro { position: fixed; inset: 0; z-index: 2; display: grid; place-items: center; pointer-events: none; padding: 0 4vw; }
+.logo-intro img { width: min(78vw, 1080px); height: auto; opacity: 0; filter: blur(22px) brightness(1.6); transform: scale(1.06);
+  transition: opacity 1.8s cubic-bezier(.2,.7,.2,1), filter 2.2s cubic-bezier(.2,.7,.2,1), transform 3.2s cubic-bezier(.2,.7,.2,1); }
+.logo-intro.is-in img { opacity: 1; filter: blur(0) brightness(1) drop-shadow(0 0 34px rgba(232, 176, 75, .28)); transform: scale(1); }
+.logo-intro.is-out img { opacity: 0; filter: blur(16px) brightness(1.4); transform: scale(1.03) translateY(-2%); transition-duration: 1.3s, 1.3s, 1.6s; }
+.logo-intro.is-quick img { transition-duration: .3s; }
+.logo-intro__steam { position: fixed; pointer-events: none; opacity: 0; filter: blur(5px); transition: opacity 1.4s ease; mix-blend-mode: screen; }
+.logo-intro__steam.is-on { opacity: 1; }
+.logo-intro.is-out .logo-intro__steam { opacity: 0; transition-duration: .9s; }
+@media (max-width: 759px) { .logo-intro img { width: 92vw; } }
+/* the headline waits for the logo act, so its safety reveal comes later */
+html.logo-intro-on.fx-pending .hero:not(.is-formed) .hero__title { animation-delay: 20s; }
+html.logo-intro-on.fx-pending .hero:not(.is-released) .hero__line { animation-delay: 20.5s; }
+</style>
 </head>
 <body data-atmos="aroma" data-no-enter>
 <div class="haze" aria-hidden="true"></div>
@@ -50,6 +67,7 @@
     </div>
   </div>
 </header>
+<div class="logo-intro" aria-hidden="true"><img src="assets/brand/karva-logo-hd.webp" alt="" decoding="async" fetchpriority="high"></div>
 <main id="main">
   <section class="hero" aria-labelledby="hero-title" data-tone="0.92,0.68,0.3">
     <figure class="veil" data-veil>

@@ -1,4 +1,4 @@
-/* SAMPLE opening (index-logo.html): the Karva logo is written in smoke first.
+/* Home opening (index.html): the Karva logo is written in smoke first.
    1. dark screen, smoke gathers into the shape of the logo
    2. the gold logo condenses out of it; the smoke lifts away in curls
    3. steam keeps rising off the clay pot while the logo holds
