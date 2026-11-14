@@ -1,0 +1,55 @@
+Menu photos (assets/photo/menu/)
+
+These are stand-in photographs from Unsplash, used under the Unsplash License
+(free to use, no permission or payment needed: https://unsplash.com/license).
+They show the dish style, not Karva's own plating. Replace them with photos of
+Karva's real dishes when those are taken.
+
+dish | Unsplash photo page
+
+badaam-ka-shorba | https://images.unsplash.com/photo-1755090154741-67861ba1c7b4
+gulnaar-tamatar | https://images.unsplash.com/photo-1620791144170-8a443bf37a33
+murgh-yakhni | https://images.unsplash.com/photo-1788141554554-206bd5510910
+tom-kha-nariyal | https://images.unsplash.com/photo-1705234384050-ee4f35382eb7
+gobhi-sixty-five | https://images.unsplash.com/photo-1696950168808-0ccf6ae6882d
+samosa-trio | https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7
+amritsari-machhi | https://images.unsplash.com/photo-1786997089873-e4c02377bd3d
+kurkure-bhindi | https://images.unsplash.com/photo-1568640895956-e2bad65027b0
+kozhi-milagu-fry | https://images.unsplash.com/photo-1603496987351-f84a3ba5ec85
+prawn-koliwada | https://images.unsplash.com/photo-1702650770029-b91afe8d7b3d
+galouti-of-lamb | https://images.unsplash.com/photo-1771285119408-04cca3b35036
+kakori-seekh | https://images.unsplash.com/photo-1532636875304-0c89119d9b4d
+murgh-malai-tikka | https://images.unsplash.com/photo-1599487488170-d11ec9c172f0
+barrah-chaap | https://images.unsplash.com/photo-1692106914421-e04e1066bd62
+tandoori-jhinga | https://images.unsplash.com/photo-1723325697529-6e2679650b39
+paneer-achari-tikka | https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8
+murgh-makhani | https://images.unsplash.com/photo-1708782341807-ed35fc16b4ea
+rogan-josh | https://images.unsplash.com/photo-1545247181-516773cae754
+chicken-tikka-masala | https://images.unsplash.com/photo-1772730064951-89b427965dbc
+chicken-butter-masala | https://images.unsplash.com/photo-1726082788670-c60006875dfd
+paneer-butter-masala | https://images.unsplash.com/photo-1631452180519-c014fe946bc7
+paneer-tikka-masala | https://images.unsplash.com/photo-1606471191009-63994c53433b
+malai-kofta | https://images.unsplash.com/photo-1618449840665-9ed506d73a34
+dal-makhni | https://images.unsplash.com/photo-1788601988466-9f361c34c6cb
+appam-ishtew | https://images.unsplash.com/photo-1789993494828-735441249a30
+ghee-roast-dosa | https://images.unsplash.com/photo-1694849789325-914b71ab4075
+chettinad-kozhi | https://images.unsplash.com/photo-1764304733301-3a9f335f0c67
+podi-idli | https://images.unsplash.com/photo-1680359871322-aabe6b33eff5
+uttapam-of-millet | https://images.unsplash.com/photo-1657196118354-f25f29fe636d
+andhra-gongura-royyala | https://images.unsplash.com/photo-1781332143666-5d02f0fe7865
+vada-sambhar | https://images.unsplash.com/photo-1730191843435-073792ba22bc
+hyderabadi-gosht | https://images.unsplash.com/photo-1589302168068-964664d93dc0
+subz-dum-biryani | https://images.unsplash.com/photo-1697155406055-2db32d47ca07
+mutton-biryani | https://images.unsplash.com/photo-1633945274309-2c16c9682a8c
+chicken-biryani | https://images.unsplash.com/photo-1630851840633-f96999247032
+lachha-paratha | https://images.unsplash.com/photo-1683533743190-89c9b19f9ea6
+amritsari-kulcha | https://images.unsplash.com/photo-1611107415406-1c12f8cda424
+phulke | https://images.unsplash.com/photo-1600935926387-12d9b03066f0
+tandoori-roti | https://images.unsplash.com/photo-1780907084884-ded9fddbb474
+butter-naan | https://images.unsplash.com/photo-1640625314547-aee9a7696589
+butter-garlic-naan | https://images.unsplash.com/photo-1794336515860-c3584f85ded7
+shahi-tukda | https://images.unsplash.com/photo-1695568181044-afbbeaf4298d
+kesar-phirni | https://images.unsplash.com/photo-1777613112969-d7511ddfbe15
+moong-dal-halwa | https://images.unsplash.com/photo-1794125342522-c49409ed54c9
+tom-kha | https://images.unsplash.com/photo-1754573433917-066de5cc2425
+pad-see-ew | https://images.unsplash.com/photo-1672842035316-d21a9a5614d1
