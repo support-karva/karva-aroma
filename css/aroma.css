@@ -174,6 +174,8 @@ html[data-motion="on"] .status.is-open .status__dot { animation: ember 2.8s ease
 }
 @media (min-width: 1080px) { .nav .status { margin-right: 6px; } .nav .status [data-status-text] { position: static; width: auto; height: auto; clip-path: none; } }
 @media (max-width: 1099px) { .nav__acts .btn { display: none; } }
+/* smaller laptops: the open-hours pill steps aside so Reserve always fits */
+@media (min-width: 1100px) and (max-width: 1279px) { .nav__acts .status { display: none; } }
 @media (max-width: 380px) { .motion { padding: 0 8px; } .motion > span:not(.motion__track), .motion .ml { display: none; } }
 
 /* phone menu */
