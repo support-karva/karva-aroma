@@ -1089,9 +1089,12 @@ export function createFluid(canvas, options = {}) {
     },
     /** cover a rectangle (client px) in fresh smoke */
     veilBurst(x0, y0, w, h, s = 0.5) {
+      // puff size follows the rectangle: on a phone the logo is short, and a
+      // computer-sized puff spread past it as a pale box
+      const k = Math.min(1, (h / ch / 0.4) ** 2);
       for (let i = 0; i < 7; i++) {
         const x = (x0 + Math.random() * w) / cw, y = 1 - (y0 + h * (0.3 + Math.random() * 0.7)) / ch;
-        splat(x, y, (Math.random() - 0.5) * 300, 200 + Math.random() * 300, tone[0] * s, tone[1] * s, tone[2] * s, 0.02 + Math.random() * 0.02);
+        splat(x, y, (Math.random() - 0.5) * 300, 200 + Math.random() * 300, tone[0] * s, tone[1] * s, tone[2] * s, (0.02 + Math.random() * 0.02) * k);
       }
     },
     tadka,
