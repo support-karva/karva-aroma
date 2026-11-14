@@ -1125,6 +1125,8 @@ export function createFluid(canvas, options = {}) {
     debugStep(n = 1) { for (let i = 0; i < n; i++) tick(1 / 60); },
     renderer() { const e = gl.getExtension('WEBGL_debug_renderer_info'); return e ? gl.getParameter(e.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER); },
     skipIntro() { if (intro && !intro.released) intro.t = 3.5; },
+    /** thin all the smoke on screen by a fraction k (0–1) */
+    thin(k = 0.1) { splatTo(dye, 0.5, 0.5, 0, 0, 0, 40, k); },
     /** hold the screen dark (no photo, no fog) until the opening begins */
     darken() { photoExpose = 0; photoExposeTo = 0; dark = true; },
     destroy() {
