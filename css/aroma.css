@@ -156,8 +156,11 @@ html[data-motion="on"] .status.is-open .status__dot { animation: ember 2.8s ease
 }
 .brand::after { content: ""; position: absolute; left: 2px; right: 2px; bottom: 2px; height: 1px; background: var(--ghee); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); }
 .brand:hover::after { transform: scaleX(1); }
-.nav__links { display: none; gap: 4px; align-items: center; font: 500 14px/1 var(--ui); }
-.nav__links a { position: relative; padding: 10px 12px; text-decoration: none; color: var(--cream-2); border-radius: 999px; transition: color .3s; }
+.nav__links { display: none; gap: 4px; align-items: center; font: 600 15px/1 var(--ui); letter-spacing: 0.06em; text-transform: uppercase; }
+.nav__links .dd__menu { text-transform: none; letter-spacing: 0; font-size: 15px; }
+.nav__links a { position: relative; padding: 10px 12px; text-decoration: none; color: var(--cream); text-shadow: 0 1px 10px rgba(0, 0, 0, .55); border-radius: 999px; transition: color .3s; }
+/* smaller laptops: a touch smaller and tighter so every link still fits */
+@media (min-width: 1100px) and (max-width: 1365px) { .nav__links { font-size: 13.5px; letter-spacing: 0.04em; gap: 0; } .nav__links a { padding: 10px 9px; } }
 .nav__links a:hover, .nav__links a[aria-current="page"] { color: var(--cream); }
 .nav__links a[aria-current="page"]::after, .nav__links a:hover::after {
   content: ""; position: absolute; left: 50%; bottom: 3px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--ghee);
@@ -176,7 +179,7 @@ html[data-motion="on"] .status.is-open .status__dot { animation: ember 2.8s ease
 @media (min-width: 1080px) { .nav .status { margin-right: 6px; } .nav .status [data-status-text] { position: static; width: auto; height: auto; clip-path: none; } }
 @media (max-width: 1099px) { .nav__acts .btn { display: none; } }
 /* smaller laptops: the open-hours pill steps aside so Reserve always fits */
-@media (min-width: 1100px) and (max-width: 1279px) { .nav__acts .status { display: none; } }
+@media (min-width: 1100px) and (max-width: 1365px) { .nav__acts .status { display: none; } }
 @media (max-width: 380px) { .motion { padding: 0 8px; } .motion > span:not(.motion__track), .motion .ml { display: none; } }
 
 /* phone menu */
