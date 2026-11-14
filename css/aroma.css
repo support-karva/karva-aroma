@@ -166,14 +166,14 @@ html[data-motion="on"] .status.is-open .status__dot { animation: ember 2.8s ease
 .nav .status [data-status-text] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .nav__acts { display: flex; align-items: center; gap: 8px; }
 .nav__acts .motion { min-height: 34px; }
-@media (min-width: 900px) {
+@media (min-width: 1100px) {
   .nav__links { display: flex; }
   .mnav { display: none; }
   .brand { margin-right: 0; }
   .nav__links { margin: 0 auto; }
 }
 @media (min-width: 1080px) { .nav .status { margin-right: 6px; } .nav .status [data-status-text] { position: static; width: auto; height: auto; clip-path: none; } }
-@media (max-width: 899px) { .nav__acts .btn { display: none; } }
+@media (max-width: 1099px) { .nav__acts .btn { display: none; } }
 @media (max-width: 380px) { .motion { padding: 0 8px; } .motion > span:not(.motion__track), .motion .ml { display: none; } }
 
 /* phone menu */
@@ -724,3 +724,47 @@ html:not([data-motion="on"]) *, html:not([data-motion="on"]) *::before, html:not
   animation: none !important; transition-duration: 0s !important; transition-delay: 0s !important; scroll-behavior: auto !important;
 }
 @media print { .atmos, .haze, .nav, .bar { display: none !important; } }
+
+/* Karva logo in the header (gold lettering, background cut out) */
+.brand--logo { display: inline-flex; align-items: center; padding: 4px 0; flex: none; }
+.brand--logo img { display: block; height: 44px; width: auto; max-width: none; filter: drop-shadow(0 2px 10px rgba(0, 0, 0, .55)); }
+.brand--logo::after { display: none; }
+.brand--logo:hover img { filter: drop-shadow(0 2px 10px rgba(0, 0, 0, .55)) brightness(1.08); }
+@media (min-width: 760px) { .brand--logo img { height: 54px; } }
+
+/* Header menu: two groups open as small dropdowns */
+.nav__links .dd { position: relative; display: flex; align-items: center; }
+.nav__links .dd__btn { all: unset; box-sizing: border-box; display: grid; place-items: center; width: 22px; height: 30px; margin-left: -10px; border-radius: 8px; color: var(--cream-2); cursor: pointer; }
+.nav__links .dd__btn svg { width: 11px; height: 11px; transition: transform .3s var(--ease); }
+.nav__links .dd__btn:focus-visible { outline: 2px solid var(--ghee); outline-offset: 1px; }
+.nav__links .dd__menu {
+  position: absolute; top: calc(100% + 6px); left: 0; min-width: 196px; padding: 8px; display: grid; gap: 2px;
+  background: rgba(14, 11, 8, .97); border: 1px solid var(--line-2); border-radius: 14px; box-shadow: 0 18px 40px rgba(0, 0, 0, .5);
+  opacity: 0; visibility: hidden; translate: 0 6px; transition: opacity .25s, translate .3s var(--ease), visibility 0s .3s;
+}
+.nav__links .dd__menu::before { content: ""; position: absolute; left: 0; right: 0; top: -10px; height: 10px; }
+.nav__links .dd:hover .dd__menu, .nav__links .dd:focus-within .dd__menu, .nav__links .dd.is-open .dd__menu { opacity: 1; visibility: visible; translate: 0 0; transition: opacity .25s, translate .3s var(--ease), visibility 0s; }
+.nav__links .dd:hover .dd__btn svg, .nav__links .dd.is-open .dd__btn svg { transform: rotate(180deg); }
+.nav__links .dd__menu a { padding: 11px 12px; border-radius: 9px; color: var(--cream-2); white-space: nowrap; }
+.nav__links .dd__menu a:hover, .nav__links .dd__menu a:focus-visible { background: rgba(232, 176, 75, .1); color: var(--cream); }
+.nav__links .dd__menu a::after { display: none !important; }
+.nav__links .dd__menu a[aria-current="page"] { color: var(--ghee); }
+.nav__links .dd.is-current > .dd__top { color: var(--cream); }
+.nav__links .dd.is-current > .dd__top::after { content: ""; position: absolute; left: 50%; bottom: 3px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--ghee); }
+
+/* phone menu: smaller words so every page fits, sub-pages as a row */
+.mnav__sheet a.big { font-size: clamp(34px, 10vw, 56px); }
+.mnav__sub { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 12px 30px; }
+.mnav__sub a { padding: 9px 14px; border: 1px solid var(--line-2); border-radius: 999px; font: 500 14px/1 var(--ui); color: var(--cream-2); text-decoration: none; }
+.mnav__sub a[aria-current="page"] { color: var(--ghee); border-color: var(--ghee); }
+html[data-motion="on"] .mnav[open] .mnav__sheet .mnav__sub { animation: rise .7s var(--ease) both .12s; }
+
+/* new info pages */
+@media (min-width: 900px) { .tgrid--two > .tcard { grid-column: span 6; } }
+.tcard__acts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.tlist { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 17px; }
+.tlist li::before { content: "◆"; color: var(--ghee); font-size: 10px; margin-right: 10px; vertical-align: 2px; }
+.nav__links .dd.is-hushed .dd__menu { opacity: 0 !important; visibility: hidden !important; }
+/* phones: smaller logo and a compact Motion switch so "Pages" always fits */
+@media (max-width: 759px) { .brand--logo img { height: 38px; } .nav__in { gap: 10px; } }
+@media (max-width: 459px) { .nav .motion { padding: 0 8px; } .nav .motion > span:not(.motion__track), .nav .motion .ml, .nav .motion b { display: none; } }

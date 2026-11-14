@@ -23,7 +23,7 @@
   if (on && window.WebGLRenderingContext && !/[?&]fx=off/.test(location.search)) d.classList.add('fx-pending');
 })(document.documentElement);
 </script>
-<link rel="stylesheet" href="css/aroma.css">
+<link rel="stylesheet" href="css/aroma.css?v=3">
 <script type="module" src="js/counter.js"></script>
 </head>
 <body data-atmos="chaat">
@@ -31,8 +31,8 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="nav" data-nav>
   <div class="nav__in">
-    <a class="brand" href="index.html" aria-label="Karva, home">Karva</a>
-    <nav class="nav__links" aria-label="Pages"><a href="index.html">Aroma</a><span class="sep" aria-hidden="true">·</span><a href="menu.html">Menu</a><span class="sep" aria-hidden="true">·</span><a href="chaat.html" aria-current="page">Chaat</a><span class="sep" aria-hidden="true">·</span><a href="table.html">Table</a></nav>
+    <a class="brand brand--logo" href="index.html"><img src="assets/brand/karva-logo-192.webp" width="556" height="192" alt="Karva, Indian-Thai cuisine. Home" decoding="async"></a>
+    <nav class="nav__links" aria-label="Pages"><a href="index.html">Aroma</a><div class="dd is-current"><a class="dd__top" href="menu.html">Menu</a><button class="dd__btn" type="button" aria-expanded="false" aria-label="More Menu pages"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dd__menu"><a href="menu.html">Full menu</a><a href="chaat.html" aria-current="page">Chaat</a><a href="drinks.html">Drinks</a><a href="specials.html">Specials</a></div></div><a href="order.html">Order</a><div class="dd"><a class="dd__top" href="table.html">Reserve</a><button class="dd__btn" type="button" aria-expanded="false" aria-label="More Reserve pages"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dd__menu"><a href="table.html">Book a table</a><a href="parties.html">Parties</a><a href="events.html">Events</a></div></div><a href="catering.html">Catering</a><a href="locations.html">Locations</a></nav>
     <div class="nav__acts">
       <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>11–2 · 5–11</span></p>
       <button class="motion" type="button" data-motion-toggle hidden aria-pressed="false"><span class="motion__track" aria-hidden="true"></span><span class="ml">Motion</span> <b data-motion-state>On</b></button>
@@ -40,7 +40,7 @@
       <details class="mnav">
         <summary aria-label="Open pages menu"><span class="mnav__ic" aria-hidden="true"></span>Pages</summary>
         <div class="mnav__sheet">
-          <nav aria-label="Pages"><a class="big" href="index.html"><small>01</small>Aroma</a><a class="big" href="menu.html"><small>02</small>Menu</a><a class="big" href="chaat.html" aria-current="page"><small>03</small>Chaat</a><a class="big" href="table.html"><small>04</small>Table</a></nav>
+          <nav aria-label="Pages"><a class="big" href="index.html"><small>01</small>Aroma</a><a class="big" href="menu.html"><small>02</small>Menu</a><p class="mnav__sub"><a href="chaat.html" aria-current="page">Chaat</a><a href="drinks.html">Drinks</a><a href="specials.html">Specials</a></p><a class="big" href="order.html"><small>03</small>Order</a><a class="big" href="table.html"><small>04</small>Reserve</a><p class="mnav__sub"><a href="parties.html">Parties</a><a href="events.html">Events</a></p><a class="big" href="catering.html"><small>05</small>Catering</a><a class="big" href="locations.html"><small>06</small>Locations</a></nav>
           <div class="mnav__foot">
             <a class="btn btn--gold" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve</a>
             <a class="btn btn--line" href="tel:+12146180078">Call (214) 618-0078</a>

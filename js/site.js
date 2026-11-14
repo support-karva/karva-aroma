@@ -20,6 +20,26 @@ const PHONE_TXT = '(214) 618-0078';
 const EMAIL = 'support@karvatx.com';
 
 initMotionToggles($$('[data-motion-toggle]'));
+
+/* Header dropdowns (Menu, Reserve): hover opens them with a mouse, the little
+   arrow opens them by tap or keyboard, Esc or a click elsewhere shuts them. */
+const dds = $$('.nav__links .dd');
+const shut = (except) => dds.forEach((d) => { if (d !== except) { d.classList.remove('is-open'); $('.dd__btn', d).setAttribute('aria-expanded', 'false'); } });
+dds.forEach((d) => {
+  const b = $('.dd__btn', d);
+  b.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = !d.classList.contains('is-open');
+    shut(d);
+    d.classList.toggle('is-open', open);
+    b.setAttribute('aria-expanded', String(open));
+    if (open) $('.dd__menu a', d).focus();
+  });
+  d.addEventListener('keydown', (e) => { if (e.key === 'Escape' && d.matches(':focus-within')) { shut(); b.focus(); d.classList.add('is-hushed'); } });
+  d.addEventListener('focusout', (e) => { if (!d.contains(e.relatedTarget)) { d.classList.remove('is-open', 'is-hushed'); b.setAttribute('aria-expanded', 'false'); } });
+  d.addEventListener('pointerleave', () => d.classList.remove('is-hushed'));
+});
+document.addEventListener('click', () => shut());
 initStatus();
 
 /* ==========================================================================
