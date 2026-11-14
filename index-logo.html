@@ -24,6 +24,7 @@
 })(document.documentElement);
 </script>
 <link rel="stylesheet" href="css/aroma.css?v=12">
+<script>(function(d){var h=d.documentElement,ios=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);if(ios)h.classList.add("ios");h.dataset.logo=ios?"assets/brand/karva-logo-1200.png":"assets/brand/karva-logo-hd.webp";var l=d.createElement("link");l.rel="preload";l.as="image";l.href=h.dataset.logo;l.setAttribute("fetchpriority","high");d.head.appendChild(l);})(document);</script>
 <script type="module" src="js/home-logo.js"></script>
 <style>
 /* SAMPLE: the logo written in smoke before "Aroma first." */
@@ -37,6 +38,7 @@
 .logo-intro__steam.is-on { opacity: 1; }
 .logo-intro.is-out .logo-intro__steam { opacity: 0; transition-duration: .9s; }
 @media (max-width: 759px) { .logo-intro img { width: 92vw; } }
+html.ios .logo-intro img, html.ios .logo-intro__steam { filter: none !important; }
 /* the headline waits for the logo act, so its safety reveal comes later */
 html.logo-intro-on.fx-pending .hero:not(.is-formed) .hero__title { animation-delay: 20s; }
 html.logo-intro-on.fx-pending .hero:not(.is-released) .hero__line { animation-delay: 20.5s; }
@@ -66,7 +68,8 @@ html.logo-intro-on.fx-pending .hero:not(.is-released) .hero__line { animation-de
     </div>
   </div>
 </header>
-<div class="logo-intro" aria-hidden="true"><img src="assets/brand/karva-logo-hd.webp" alt="" decoding="async" fetchpriority="high"></div>
+<div class="logo-intro" aria-hidden="true"><img alt="" decoding="async" fetchpriority="high"></div>
+<script>document.querySelector(".logo-intro img").src=document.documentElement.dataset.logo;</script>
 <main id="main">
   <section class="hero" aria-labelledby="hero-title" data-tone="0.92,0.68,0.3">
     <figure class="veil" data-veil>
