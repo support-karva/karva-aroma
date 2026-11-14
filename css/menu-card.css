@@ -221,3 +221,6 @@ html[data-motion="on"] .mc-dish__body.is-swap > * { animation: mc-swap .5s var(-
 @media (max-width: 759px) { .mc-dish.is-nophoto { width: 100vw; } }
 /* touch screens never hover, so the hidden "View" label should not take room from the price */
 @media (hover: none) { .mc-list li[data-dish] .mc-nm::after { display: none; } }
+
+/* phones: long one-word headings ("Sparkling", "Mocktails") must fit the card */
+@media (max-width: 480px) { .mc-h { font-size: clamp(44px, 14vw, 64px); } }

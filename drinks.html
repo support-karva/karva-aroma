@@ -25,6 +25,8 @@
 </script>
 <link rel="stylesheet" href="css/aroma.css?v=12">
 <script type="module" src="js/site.js"></script>
+<link rel="stylesheet" href="css/menu-card.css?v=5">
+<script type="module" src="js/menu.js?v=5"></script>
 </head>
 <body data-atmos="table">
 <div class="haze" aria-hidden="true"></div>
@@ -50,9 +52,66 @@
     </div>
   </div>
 </header>
-<main id="main">
-  <header class="phead" data-zone="0.5"><span class="kicker">Menu · Drinks</span><h1>Something to <em>sip.</em></h1><p>Our drinks list is being written up for the website. Until it is here, your server will walk you through what is pouring today.</p></header>
-  <div class="tgrid tgrid--two"><section class="tcard" aria-labelledby="h-d1"><h2 id="h-d1">Ask at the <em>table.</em></h2><p>Tell your server what you like and they will suggest a drink to go with your food.</p></section><section class="tcard" aria-labelledby="h-d2"><h2 id="h-d2">Questions <em>before you come?</em></h2><p>Call us and we will tell you what we have.</p><div class="tcard__acts"><a class="btn btn--gold" href="tel:+12146180078">Call (214) 618-0078</a></div></section></div>
+<main id="main" class="mc">
+  <header class="mc-hero">
+    <img src="assets/photo/bar-1448.jpg" srcset="assets/photo/bar-960.jpg 960w, assets/photo/bar-1448.jpg 1448w" sizes="100vw" width="1448" height="1086" alt="The round Karva bar with tan leather stools, a gold canopy above and bottles lit along the back wall." fetchpriority="high">
+    <div class="mc-hero__in">
+      <p class="mc-hero__over">Karva · Little Elm, Texas</p>
+      <h1>The <em>Bar</em></h1>
+    </div>
+  </header>
+  <div class="mc-band" aria-hidden="true"></div>
+  <nav class="mc-chips" aria-label="Drinks sections" data-chips><div class="mc-chips__in"><a href="#signature">Signature</a><a href="#classics">Classics</a><a href="#mocktails">Mocktails</a><a href="#wine">Wine</a><a href="#beer">Beer &amp; Sake</a></div></nav>
+  <div class="mc-card">
+    <div class="mc-top">
+      <a class="mc-btn" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve your table</a>
+      <p class="mc-two"><span>Cocktails</span><i aria-hidden="true"></i><span>Wine, beer &amp; sake</span></p>
+    </div>
+    <section class="mc-sec" id="signature" aria-labelledby="h-signature" data-sec>
+      <h2 class="mc-h" id="h-signature">Signature Cocktails</h2>
+      <p class="mc-sub">(Our own, shaken at the bar)</p>
+      <ul class="mc-list mc-list--plain"><li><p class="mc-nm"><span>Lychee If You Like Me</span><span class="mc-pr">$13</span></p><p class="mc-ds">Vodka, Soho lychee liqueur, lychee juice, lime juice, simple syrup, Chambord</p></li><li><p class="mc-nm"><span>Karva Mule</span><span class="mc-pr">$13</span></p><p class="mc-ds">Cucumber vodka, lime juice, simple syrup, ginger beer</p></li><li><p class="mc-nm"><span>Siam Sunset</span><span class="mc-pr">$13</span></p><p class="mc-ds">Tequila, fresh mint, orange juice, lime juice, simple syrup, Aperol</p></li><li><p class="mc-nm"><span>Coffee or Me</span><span class="mc-pr">$14</span></p><p class="mc-ds">Absolut Vanilla, Kahlúa, Baileys</p></li><li><p class="mc-nm"><span>Green Goddess</span><span class="mc-pr">$14</span></p><p class="mc-ds">Gin, lemon juice, agave, basil, cucumber, soda</p></li><li><p class="mc-nm"><span>Full Moon Party</span><span class="mc-pr">$14</span></p><p class="mc-ds">Gin, yuzu syrup, peach schnapps, lemon juice, orgeat syrup</p></li><li><p class="mc-nm"><span>Tom Yum Cocktail</span><span class="mc-pr">$15</span></p><p class="mc-ds">Spicy vodka, simple syrup, lime juice, ginger beer</p></li><li><p class="mc-nm"><span>In the Garden</span><span class="mc-pr">$15</span></p><p class="mc-ds">Empress 1908 gin, St-Germain, St. Elder, lychee juice, lime juice, simple syrup</p></li><li><p class="mc-nm"><span>Midnight in Bangkok</span><span class="mc-pr">$15</span></p><p class="mc-ds">Bourbon, brown sugar syrup, chili, bitters, smoke</p></li></ul>
+    </section>
+    <section class="mc-sec" id="classics" aria-labelledby="h-classics" data-sec>
+      <h2 class="mc-h" id="h-classics">Classic Cocktails</h2>
+      <p class="mc-sub">(Every classic $13)</p>
+      <ul class="mc-list"><li><p class="mc-nm"><span>Cosmopolitan</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Long Island Iced Tea</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Martini</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Mojito</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Old Fashioned</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Piña Colada</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Manhattan</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Aperol Spritz</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Negroni</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>French 75</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Lemon Drop</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Margarita</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Mimosa</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Moscow Mule</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Gin &amp; Tonic</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Mai Tai</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Espresso Martini</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Tequila Sunrise</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>White Russian</span><span class="mc-pr">$13</span></p></li><li><p class="mc-nm"><span>Ranch Water</span><span class="mc-pr">$13</span></p></li></ul>
+    </section>
+    <section class="mc-sec" id="mocktails" aria-labelledby="h-mocktails" data-sec>
+      <h2 class="mc-h" id="h-mocktails">Mocktails</h2>
+      <p class="mc-sub">(All the fun, no alcohol)</p>
+      <ul class="mc-list mc-list--plain"><li><p class="mc-nm"><span>Shirley Temple</span><span class="mc-pr">$5</span></p></li><li><p class="mc-nm"><span>Arnold Palmer</span><span class="mc-pr">$5</span></p></li><li><p class="mc-nm"><span>Appletini</span><span class="mc-pr">$9</span></p></li><li><p class="mc-nm"><span>Blue Cosmo</span><span class="mc-pr">$9</span></p></li><li><p class="mc-nm"><span>Virgin Mojito</span><span class="mc-pr">$9</span></p><p class="mc-ds">Strawberry or mango, $11</p></li><li><p class="mc-nm"><span>Virgin Margarita</span><span class="mc-pr">$9</span></p><p class="mc-ds">Strawberry or mango, $11</p></li><li><p class="mc-nm"><span>Virgin Piña Colada</span><span class="mc-pr">$11</span></p></li></ul>
+    </section>
+    <section class="mc-sec" id="wine" aria-labelledby="h-wine" data-sec>
+      <h2 class="mc-h" id="h-wine">White Wine</h2>
+      <p class="mc-sub">(Glass $13 · bottle $50)</p>
+      <ul class="mc-list mc-list--plain"><li><p class="mc-nm"><span>Sauvignon Blanc</span><span class="mc-pr">$13 / $50</span></p><p class="mc-ds">Slo Jams · Horse Heaven Hills, WA</p></li><li><p class="mc-nm"><span>Chardonnay</span><span class="mc-pr">$13 / $50</span></p><p class="mc-ds">Aviary · Napa Valley, CA</p></li><li><p class="mc-nm"><span>Pinot Gris</span><span class="mc-pr">$13 / $50</span></p><p class="mc-ds">Chemistry · Willamette Valley, OR</p></li></ul>
+    </section>
+    <section class="mc-sec" id="red-wine" aria-labelledby="h-red-wine" data-sec data-chip="wine">
+      <h2 class="mc-h" id="h-red-wine">Red Wine</h2>
+      <p class="mc-sub">(Glass $13 · bottle $50)</p>
+      <ul class="mc-list mc-list--plain"><li><p class="mc-nm"><span>Cabernet Sauvignon</span><span class="mc-pr">$13 / $50</span></p><p class="mc-ds">Grounded by Josh Phelps · Modesto, CA</p></li><li><p class="mc-nm"><span>Pinot Noir</span><span class="mc-pr">$13 / $50</span></p><p class="mc-ds">The Pinot Project · Monterey, CA</p></li><li><p class="mc-nm"><span>Merlot</span><span class="mc-pr">$13 / $50</span></p><p class="mc-ds">About Time · Paso Robles, CA</p></li><li><p class="mc-nm"><span>Malbec</span><span class="mc-pr">$13 / $50</span></p><p class="mc-ds">Tapiz · Mendoza, Argentina</p></li></ul>
+    </section>
+    <section class="mc-sec" id="sparkling" aria-labelledby="h-sparkling" data-sec data-chip="wine">
+      <h2 class="mc-h" id="h-sparkling">Sparkling</h2>
+      <p class="mc-sub">(Glass $13 · bottle $50)</p>
+      <ul class="mc-list mc-list--plain"><li><p class="mc-nm"><span>Prosecco</span><span class="mc-pr">$13 / $50</span></p><p class="mc-ds">Bellafina · Italy</p></li><li><p class="mc-nm"><span>Brut Rosé</span><span class="mc-pr">$13 / $50</span></p><p class="mc-ds">Mas Fi · DO Cava (Penedès), Spain</p></li></ul>
+    </section>
+    <section class="mc-sec" id="beer" aria-labelledby="h-beer" data-sec>
+      <h2 class="mc-h" id="h-beer">Beer</h2>
+      <p class="mc-sub">(Every bottle $6)</p>
+      <ul class="mc-list mc-list--plain"><li><p class="mc-nm"><span>Singha</span><span class="mc-pr">$6</span></p><p class="mc-ds">Thailand</p></li><li><p class="mc-nm"><span>Chang</span><span class="mc-pr">$6</span></p><p class="mc-ds">Thailand</p></li><li><p class="mc-nm"><span>Sapporo</span><span class="mc-pr">$6</span></p><p class="mc-ds">Japan</p></li><li><p class="mc-nm"><span>Kirin</span><span class="mc-pr">$6</span></p><p class="mc-ds">Japan</p></li></ul>
+    </section>
+    <section class="mc-sec" id="sake" aria-labelledby="h-sake" data-sec data-chip="beer">
+      <h2 class="mc-h" id="h-sake">Sake</h2>
+      <p class="mc-sub">(Warm or chilled)</p>
+      <ul class="mc-list mc-list--plain"><li><p class="mc-nm"><span>Hot or Cold Sake</span><span class="mc-pr">$9</span></p></li><li><p class="mc-nm"><span>Flavored Sake, cold</span><span class="mc-pr">$11</span></p><p class="mc-ds">Lychee, strawberry or mango</p></li></ul>
+    </section>
+    <div class="mc-end">
+      <p>Ask your server what is pouring today.</p>
+      <a class="mc-btn" href="tel:+12146180078" data-reserve aria-haspopup="dialog">Reserve your table</a>
+    </div>
+  </div>
 </main>
 <footer class="foot">
   <div class="foot__in">

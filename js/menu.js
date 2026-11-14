@@ -16,7 +16,8 @@ if ('IntersectionObserver' in window) {
 
   let current = null;
   // the top bar has "Indian Menu" and "Thai Menu": light up whichever part you are reading
-  const navMenus = $$('[data-nav-menu]');
+  // (only on the food menu page; the bar page reuses this script)
+  const navMenus = $('#thai') ? $$('[data-nav-menu]') : [];
   const markNav = (which) => navMenus.forEach((a) => {
     if (a.dataset.navMenu === which) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
   });
