@@ -210,3 +210,14 @@ html[data-motion="on"] .mc-dish__body.is-swap > * { animation: mc-swap .5s var(-
 
 /* fields a dish does not have stay out of the card */
 .mc-dish [hidden] { display: none !important; }
+
+/* Thai kitchen: prices on the right of each dish */
+.mc-pr { margin-left: auto; padding-left: 14px; font: 600 13px/1 var(--ui); letter-spacing: .06em; color: var(--ghee); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.mc-list li[data-dish] .mc-pr + .mc-nm::after, .mc-list li[data-dish] .mc-nm:has(.mc-pr)::after { margin-left: 10px; }
+.mc-sec--intro { padding-bottom: 0; }
+/* a dish without its own photo: the card is just the words */
+.mc-dish.is-nophoto { width: min(600px, calc(100vw - 32px)); }
+.mc-dish.is-nophoto .mc-dish__card { grid-template-columns: minmax(0, 1fr); height: auto; max-height: min(88vh, 760px); overflow-y: auto; }
+@media (max-width: 759px) { .mc-dish.is-nophoto { width: 100vw; } }
+/* touch screens never hover, so the hidden "View" label should not take room from the price */
+@media (hover: none) { .mc-list li[data-dish] .mc-nm::after { display: none; } }

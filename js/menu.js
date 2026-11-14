@@ -27,7 +27,7 @@ if ('IntersectionObserver' in window) {
     });
   };
   const spy = new IntersectionObserver((entries) => {
-    entries.forEach((e) => { if (e.isIntersecting) mark(e.target.id); });
+    entries.forEach((e) => { if (e.isIntersecting) mark(e.target.dataset.chip || e.target.id); });
   }, { rootMargin: '-30% 0px -60% 0px' });
   secs.forEach((s) => spy.observe(s));
 } else {
@@ -125,12 +125,13 @@ if (dlg && dataEl && typeof dlg.showModal === 'function') {
     const d = DATA[slug];
     if (!d) return;
     idx = order.indexOf(slug);
-    field('no').textContent = `${d.section || 'Chaat'} · ${d.no}`;
+    field('no').textContent = `${d.section || 'Chaat'} · ${d.no}${d.price ? ` · ${d.price}` : ''}`;
     field('name').textContent = d.name;
     field('aka').textContent = d.aka;
     field('aka').hidden = !d.aka;
     field('inh').textContent = d.insideTitle || "What's in it";
-    list(field('inside'), d.inside);
+    list(field('inside'), d.inside || []);
+    field('inside').hidden = field('inh').hidden = !(d.inside && d.inside.length);
     field('story').textContent = d.story;
     list(field('plate'), d.plate || []);
     field('plate').hidden = field('plateh').hidden = !(d.plate && d.plate.length);
@@ -146,7 +147,10 @@ if (dlg && dataEl && typeof dlg.showModal === 'function') {
     chips.hidden = !has.length;
     chips.previousElementSibling.hidden = !has.length;
     field('count').textContent = `${String(idx + 1).padStart(2, '0')} / ${String(order.length).padStart(2, '0')}`;
-    if (pic.getAttribute('src') !== d.img) {
+    // a dish without its own photo shows the card without a picture
+    pic.parentElement.hidden = !d.img;
+    dlg.classList.toggle('is-nophoto', !d.img);
+    if (d.img && pic.getAttribute('src') !== d.img) {
       pic.classList.add('is-loading');
       pic.onload = () => pic.classList.remove('is-loading');
       if (d.img4k) { pic.srcset = `${d.img} 1920w, ${d.img4k} 3840w`; pic.sizes = '(max-width: 759px) 100vw, 460px'; }
