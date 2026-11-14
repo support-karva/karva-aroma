@@ -42,11 +42,10 @@ if (withImg.length) {
   const peek = document.createElement('div');
   peek.className = 'mc-peek';
   peek.setAttribute('aria-hidden', 'true');
-  peek.innerHTML = '<img alt="" decoding="async"><span class="mc-peek__ai">AI image</span><span class="mc-peek__cap"></span>';
+  peek.innerHTML = '<img alt="" decoding="async"><span class="mc-peek__cap"></span>';
   document.body.appendChild(peek);
   const img = $('img', peek);
   const cap = $('.mc-peek__cap', peek);
-  const badge = $('.mc-peek__ai', peek);
   const W = 230, H = 288, GAP = 26;
   let tx = 0, ty = 0, x = 0, y = 0, raf = 0, active = null;
 
@@ -84,7 +83,6 @@ if (withImg.length) {
         img.src = src;
       }
       cap.textContent = $('.mc-nm span', li).textContent;
-      badge.textContent = li.dataset.photo === 'stand-in' ? 'Stand-in photo' : 'AI image';
       peek.classList.add('is-on');
       follow(e);
     });
@@ -136,7 +134,6 @@ if (dlg && dataEl && typeof dlg.showModal === 'function') {
     field('story').textContent = d.story;
     list(field('plate'), d.plate || []);
     field('plate').hidden = field('plateh').hidden = !(d.plate && d.plate.length);
-    field('cap').textContent = d.photo || 'AI image · placeholder';
     field('allergens').textContent = d.allergens;
     const NAMES = { veg: 'Vegetarian', vegan: 'Vegan', gluten: 'Gluten', dairy: 'Dairy', peanuts: 'Peanuts', mustard: 'Mustard', soy: 'Soy', sesame: 'Sesame', nonveg: 'Non-vegetarian' };
     const ico = (k) => `<svg aria-hidden="true"><use href="#i-${k}"/></svg>`;
@@ -155,7 +152,7 @@ if (dlg && dataEl && typeof dlg.showModal === 'function') {
       if (d.img4k) { pic.srcset = `${d.img} 1920w, ${d.img4k} 3840w`; pic.sizes = '(max-width: 759px) 100vw, 460px'; }
       else { pic.removeAttribute('srcset'); pic.removeAttribute('sizes'); }
       pic.src = d.img;
-      pic.alt = d.photo ? `Stand-in photograph for ${d.name}; Karva's own plating may look different.` : `AI-generated placeholder image of ${d.name}.`;
+      pic.alt = `${d.name} on a plate.`;
     }
     body.scrollTop = 0;
     if (dlg.querySelector('.mc-dish__card').scrollTop) dlg.querySelector('.mc-dish__card').scrollTop = 0;
