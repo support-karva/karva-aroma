@@ -52,6 +52,29 @@
 }
 @keyframes room-in { from { opacity: 0; transform: translateY(28px); } }
 html[data-motion="on"] .room__grid figure { animation: room-in 1.2s var(--ease) both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+/* click a room photo: it opens large */
+.room__grid figure { cursor: zoom-in; }
+.room__grid figure:focus-visible { outline: 2px solid var(--ghee); outline-offset: 3px; }
+.lb { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; color: var(--cream); overflow: hidden; }
+.lb::backdrop { background: rgba(5, 4, 3, .94); }
+.lb__stage { position: absolute; inset: 0; display: grid; place-items: center; padding: 64px 72px 72px; }
+.lb__img { max-width: calc(100vw - 144px); max-height: calc(100vh - 136px); max-height: calc(100dvh - 136px); width: auto; height: auto; object-fit: contain; border-radius: 4px; box-shadow: 0 30px 80px rgba(0, 0, 0, .6); }
+.lb__cap { position: absolute; left: 0; right: 0; bottom: 24px; text-align: center; font: 600 11px/1 var(--ui); letter-spacing: .22em; text-transform: uppercase; color: var(--cream-2); }
+.lb__cap b { color: var(--ghee); font-weight: 600; margin-right: 14px; }
+.lb button { position: absolute; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 999px; border: 1px solid var(--line-2); background: rgba(5, 4, 3, .6); color: var(--cream); cursor: pointer; transition: border-color .2s, color .2s; }
+.lb button:hover { border-color: var(--ghee); color: var(--ghee); }
+.lb button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.lb__close { top: 14px; right: 14px; }
+.lb__prev { left: 14px; top: 50%; translate: 0 -50%; }
+.lb__next { right: 14px; top: 50%; translate: 0 -50%; }
+@media (max-width: 759px) {
+  .lb__stage { padding: 64px 12px 64px; }
+  .lb__img { max-width: calc(100vw - 24px); }
+  .lb__prev, .lb__next { top: auto; bottom: 12px; translate: none; }
+  .lb__cap { bottom: 30px; }
+}
+html[data-motion="on"] .lb[open] .lb__img { animation: lb-in .45s var(--ease) both; }
+@keyframes lb-in { from { opacity: 0; transform: scale(.97); } }
 </style>
 </head>
 <body data-atmos="table">
@@ -137,6 +160,57 @@ html[data-motion="on"] .room__grid figure { animation: room-in 1.2s var(--ease) 
     <section class="tcard" aria-labelledby="h-know"><h2 id="h-know">Good to <em>know.</em></h2><p>No dress code, kids and families always welcome, vegetarian dishes on both menus, spice adjusted to taste, and tell your server about any allergies.</p></section>
   </div>
 </main>
+<dialog class="lb" aria-label="Photo" data-lb>
+  <div class="lb__stage"><img class="lb__img" alt=""></div>
+  <p class="lb__cap"><b data-lb-count></b><span data-lb-cap></span></p>
+  <button class="lb__prev" type="button" aria-label="Previous photo" data-lb-step="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+  <button class="lb__next" type="button" aria-label="Next photo" data-lb-step="1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+  <button class="lb__close" type="button" aria-label="Close photo" data-lb-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</dialog>
+<script>
+(function () {
+  var figs = [].slice.call(document.querySelectorAll('.room__grid figure'));
+  var dlg = document.querySelector('[data-lb]');
+  if (!figs.length || !dlg || typeof dlg.showModal !== 'function') return;
+  var img = dlg.querySelector('.lb__img'), cap = dlg.querySelector('[data-lb-cap]'), count = dlg.querySelector('[data-lb-count]');
+  var i = 0, opener = null, x0 = null;
+  function show(n) {
+    i = (n + figs.length) % figs.length;
+    var src = figs[i].querySelector('img');
+    img.src = src.currentSrc || src.src;
+    img.alt = src.alt;
+    cap.textContent = figs[i].querySelector('figcaption').textContent;
+    count.textContent = (i + 1) + ' / ' + figs.length;
+    img.style.animation = 'none'; void img.offsetWidth; img.style.animation = '';
+  }
+  function close() { dlg.close(); document.body.classList.remove('is-locked'); if (opener) opener.focus({ preventScroll: true }); }
+  figs.forEach(function (f, n) {
+    f.tabIndex = 0;
+    f.setAttribute('role', 'button');
+    f.setAttribute('aria-label', 'Open photo: ' + f.querySelector('figcaption').textContent.toLowerCase());
+    function open() { opener = f; show(n); dlg.showModal(); document.body.classList.add('is-locked'); }
+    f.addEventListener('click', open);
+    f.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  });
+  dlg.querySelectorAll('[data-lb-step]').forEach(function (b) { b.addEventListener('click', function () { show(i + Number(b.dataset.lbStep)); }); });
+  dlg.querySelector('[data-lb-close]').addEventListener('click', close);
+  dlg.addEventListener('cancel', function (e) { e.preventDefault(); close(); });
+  dlg.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { e.preventDefault(); show(i + 1); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); show(i - 1); }
+  });
+  // a tap on the dark area (not the photo or a button) closes it
+  dlg.addEventListener('click', function (e) { if (e.target === dlg || e.target.classList.contains('lb__stage')) close(); });
+  // swipe left or right on a phone to change photo
+  dlg.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  dlg.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 50) show(i + (dx < 0 ? 1 : -1));
+  });
+})();
+</script>
+
 <footer class="foot">
   <div class="foot__in">
     <div>
