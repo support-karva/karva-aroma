@@ -25,6 +25,34 @@
 </script>
 <link rel="stylesheet" href="css/aroma.css?v=12">
 <script type="module" src="js/site.js"></script>
+<style>
+/* "The room": photos of the dining room and bar */
+.room { max-width: calc(var(--max) + 2 * var(--g)); margin: 0 auto; padding: 40px var(--g) 72px; }
+.room__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 32px; margin-bottom: 28px; }
+.room__head .kicker { display: block; margin-bottom: 14px; }
+.room__head h2 { font-size: clamp(48px, 7vw, 104px); font-weight: 320; letter-spacing: -0.05em; line-height: .95; }
+.room__head h2 em { color: var(--ghee); }
+.room__head p { max-width: 36ch; color: var(--cream-2); font-size: clamp(15px, 1.3vw, 17px); }
+.room__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(10px, 1.2vw, 16px); }
+.room__grid figure { position: relative; margin: 0; overflow: hidden; border-radius: 4px; background: #0b0907; grid-column: span 12; aspect-ratio: 4 / 5; }
+.room__grid img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.6s var(--ease); }
+.room__grid figure::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, transparent 62%, rgba(5, 4, 3, .72)); box-shadow: inset 0 0 0 1px var(--line); border-radius: inherit; }
+.room__grid figcaption { position: absolute; left: 18px; bottom: 16px; z-index: 1; font: 600 11px/1 var(--ui); letter-spacing: .22em; text-transform: uppercase; color: var(--cream); text-shadow: 0 1px 8px rgba(0, 0, 0, .6); }
+.room__grid figcaption::before { content: ""; display: inline-block; width: 18px; height: 1px; margin-right: 10px; vertical-align: middle; background: var(--ghee); }
+.room__grid .r-6 { grid-column: span 6; aspect-ratio: 3 / 4; }
+@media (max-width: 759px) { .room__grid .r-6 figcaption { left: 12px; bottom: 12px; letter-spacing: .16em; } .room__grid .r-6 figcaption::before { width: 10px; margin-right: 6px; } }
+@media (hover: hover) { .room__grid figure:hover img { transform: scale(1.035); } }
+@media (min-width: 760px) {
+  .room__grid .r-wide { aspect-ratio: 16 / 8; }
+  .room__grid .r-wide img { object-position: 50% 50%; }
+  .room__grid .r-7 { grid-column: span 7; aspect-ratio: auto; height: clamp(420px, 52vw, 680px); }
+  .room__grid .r-5 { grid-column: span 5; aspect-ratio: auto; height: clamp(420px, 52vw, 680px); }
+  .room__grid .r-6 { grid-column: span 6; aspect-ratio: 1 / 1; }
+  .room__grid .r-6 img { object-position: 50% 62%; }
+}
+@keyframes room-in { from { opacity: 0; transform: translateY(28px); } }
+html[data-motion="on"] .room__grid figure { animation: room-in 1.2s var(--ease) both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+</style>
 </head>
 <body data-atmos="table">
 <div class="haze" aria-hidden="true"></div>
@@ -58,6 +86,19 @@
   <section class="phone-block" aria-label="Call us" data-zone="0.55">
     <a class="phone" href="tel:+12146180078" aria-label="Call (214) 618-0078"><span class="a">(214)</span><span>618-0078</span></a>
     <p>Tap to call. Reservations are by phone; parties over eight, please call first.</p>
+  </section>
+  <section class="room" aria-labelledby="h-room">
+    <div class="room__head">
+      <div><span class="kicker">Dine in</span><h2 id="h-room">The <em>room.</em></h2></div>
+      <p>Leather chairs, low gold lamps and orchids on every table, with the bar at the heart of the room.</p>
+    </div>
+    <div class="room__grid">
+      <figure class="r-wide"><img src="assets/photo/room/arches.jpg" width="960" height="1280" loading="lazy" decoding="async" alt="The dining room: leather chairs and long banquettes beneath arched panels hung with paintings of Thailand's regions."><figcaption>THE DINING ROOM</figcaption></figure>
+      <figure class="r-7"><img src="assets/photo/room/window.jpg" width="960" height="1280" loading="lazy" decoding="async" alt="Tables set by tall windows, each with a gold lamp, an orchid and folded black napkins."><figcaption>BY THE WINDOWS</figcaption></figure>
+      <figure class="r-5"><img src="assets/photo/room/bar.jpg" width="960" height="1280" loading="lazy" decoding="async" alt="The round bar with tan leather stools, warm light under the counter and a lit canopy above."><figcaption>THE BAR</figcaption></figure>
+      <figure class="r-6"><img src="assets/photo/room/day.jpg" width="960" height="1280" loading="lazy" decoding="async" alt="A leather banquette with plants down the middle of the room, the bar behind."><figcaption>DINING</figcaption></figure>
+      <figure class="r-6"><img src="assets/photo/room/night.jpg" width="960" height="1280" loading="lazy" decoding="async" alt="The same banquette and tables in the evening, lit by pendant lanterns and table lamps."><figcaption>DINING</figcaption></figure>
+    </div>
   </section>
   <div class="tgrid">
     <section class="tcard tcard--hours" aria-labelledby="h-hours">
