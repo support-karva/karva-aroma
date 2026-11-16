@@ -31,6 +31,8 @@
 /* the bar photo is already a night shot: lighter shading so the room shows */
 .mc-hero::after { background: linear-gradient(180deg, rgba(5, 4, 3, .62) 0%, rgba(5, 4, 3, .12) 34%, rgba(5, 4, 3, .22) 68%, var(--bg) 100%); }
 .mc-hero__over { display: inline-block; padding: 8px 6px 8px 16px; border-radius: 999px; background: rgba(5, 4, 3, .55); text-shadow: 0 1px 3px rgba(0, 0, 0, .9); }
+/* no slow zoom on this photo: it is already enlarged on wide screens */
+html[data-motion="on"] .mc-hero img { animation: none; }
 .mc-hero h1 { text-shadow: 0 4px 30px rgba(0, 0, 0, .75); }
 </style>
 </head>
@@ -60,7 +62,7 @@
 </header>
 <main id="main" class="mc">
   <header class="mc-hero">
-    <img src="assets/photo/bar-night-v2-960.jpg" width="960" height="1280" style="object-position:50% 47%" alt="The round Karva bar at night, warm light under the counter, tan leather stools and small gold lamps on the bar top." fetchpriority="high">
+    <img src="assets/photo/bar-night-v2-1920.jpg" srcset="assets/photo/bar-night-v2-960.jpg 960w, assets/photo/bar-night-v2-1920.jpg 1920w" sizes="100vw" width="960" height="1280" style="object-position:50% 47%" alt="The round Karva bar at night, warm light under the counter, tan leather stools and small gold lamps on the bar top." fetchpriority="high">
     <div class="mc-hero__in">
       <p class="mc-hero__over">Karva · Little Elm, Texas</p>
       <h1>The <em>Bar</em></h1>
